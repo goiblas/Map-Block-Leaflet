@@ -1,4 +1,4 @@
-# New Awesome Blocks for Gutenberg
+# Leaft map block for Gutenberg
 
 The objective of this project is an alternative in Google Maps to include maps in the WordPress content, for this I take advantage of the new capabilities of the Gutenberg editor
 
