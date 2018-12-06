@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/blocks/leaflet-map-block/index.js:18
+msgid "Leaflet map"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/index.js:19
+msgid "Easy way to inside maps in your contents"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/index.js:22
+msgid "map"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/index.js:23
+msgid "leaflet"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:31
+msgid "Content of tooltip"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:36
+msgid "Theme"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:38
+msgid "Select theme"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:51
+msgid "Position"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:52
+msgid "latitude"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:59
+msgid "longitude"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/inspector.js:67
+msgid "Zoom"
+msgstr ""
+
+#: src/components/providers.js:13
+#: src/shared/providers.js:13
+msgid "WorldImagery"
+msgstr ""
+
+#: src/components/providers.js:20
+#: src/shared/providers.js:20
+msgid "Black And White"
+msgstr ""
+
+#: src/components/providers.js:27
+#: src/shared/providers.js:27
+msgid "Grayscale"
+msgstr ""
+
+#: src/components/providers.js:34
+#: src/shared/providers.js:34
+msgid "Dark Matter"
+msgstr ""
+
+#: src/components/providers.js:41
+#: src/shared/providers.js:6
+msgid "Voyager"
+msgstr ""
+
+#: src/components/providers.js:48
+#: src/shared/providers.js:48
+msgid "Wikimedia"
+msgstr ""
+
+#: src/components/providers.js:6
+#: src/shared/providers.js:41
+msgid "Mapnik"
+msgstr ""
