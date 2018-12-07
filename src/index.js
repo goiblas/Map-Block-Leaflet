@@ -6,4 +6,3 @@ import './i18n.js';
  import './providers.js';
  import './blocks/leaflet-map-block';
 
-

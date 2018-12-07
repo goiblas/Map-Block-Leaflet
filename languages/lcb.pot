@@ -3,81 +3,74 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/leaflet-map-block/index.js:18
-msgid "Leaflet map"
-msgstr ""
-
-#: src/blocks/leaflet-map-block/index.js:19
-msgid "Easy way to inside maps in your contents"
+#: src/blocks/leaflet-map-block/index.js:21
+msgid "Leaflet Map"
 msgstr ""
 
 #: src/blocks/leaflet-map-block/index.js:22
+msgid "Easy way to inside maps in your contents"
+msgstr ""
+
+#: src/blocks/leaflet-map-block/index.js:25
 msgid "map"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:23
+#: src/blocks/leaflet-map-block/index.js:26
 msgid "leaflet"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:31
+#: src/blocks/leaflet-map-block/inspector.js:42
 msgid "Content of tooltip"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:36
+#: src/blocks/leaflet-map-block/inspector.js:47
 msgid "Theme"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:38
+#: src/blocks/leaflet-map-block/inspector.js:49
 msgid "Select theme"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:51
+#: src/blocks/leaflet-map-block/inspector.js:62
 msgid "Position"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:52
+#: src/blocks/leaflet-map-block/inspector.js:63
 msgid "latitude"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:59
+#: src/blocks/leaflet-map-block/inspector.js:70
 msgid "longitude"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:67
+#: src/blocks/leaflet-map-block/inspector.js:78
 msgid "Zoom"
 msgstr ""
 
-#: src/components/providers.js:13
 #: src/shared/providers.js:13
 msgid "WorldImagery"
 msgstr ""
 
-#: src/components/providers.js:20
 #: src/shared/providers.js:20
 msgid "Black And White"
 msgstr ""
 
-#: src/components/providers.js:27
 #: src/shared/providers.js:27
 msgid "Grayscale"
 msgstr ""
 
-#: src/components/providers.js:34
 #: src/shared/providers.js:34
 msgid "Dark Matter"
 msgstr ""
 
-#: src/components/providers.js:41
-#: src/shared/providers.js:6
-msgid "Voyager"
+#: src/shared/providers.js:41
+msgid "Mapnik"
 msgstr ""
 
-#: src/components/providers.js:48
 #: src/shared/providers.js:48
 msgid "Wikimedia"
 msgstr ""
 
-#: src/components/providers.js:6
-#: src/shared/providers.js:41
-msgid "Mapnik"
+#: src/shared/providers.js:6
+msgid "Voyager"
 msgstr ""

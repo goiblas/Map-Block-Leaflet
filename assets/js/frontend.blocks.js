@@ -60,15 +60,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 390);
+/******/ 	return __webpack_require__(__webpack_require__.s = 394);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 390:
+/***/ 394:
 /***/ (function(module, exports) {
 
-eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMzkwLmpzIiwic291cmNlcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///390\n");
+eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/lab/wp-content/plugins/leaflet-map-block/src/frontend.js'\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMzk0LmpzIiwic291cmNlcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///394\n");
 
 /***/ })
 

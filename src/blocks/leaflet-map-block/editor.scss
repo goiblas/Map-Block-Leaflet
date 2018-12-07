@@ -1,5 +1,5 @@
 .leaflet-container {
-    height: 300px;
+    height: 100%;
     position: relative;
 }
 .leaflet-map-block-header {
@@ -21,3 +21,7 @@
     transform: translateY(calc(-100% - 2px));
     opacity: 1;
 }
+
+
+
+// 

@@ -3,8 +3,6 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 
-import providers from '../shared/providers';
-
 export default class LeafletMap extends Component {
 
     onZoom({target} = {}) {
@@ -23,17 +21,24 @@ export default class LeafletMap extends Component {
         setAttributes({..._latlng})
       }
     }
-
+    componentDidMount() {
+      const { attributes, setAttributes } = this.props;
+      const { zoom } = attributes;
+      
+      setAttributes({ zoom: zoom - 1})
+      setTimeout( () => { 
+          setAttributes( { zoom: zoom + 1})
+      },10);
+    }
     render(){
-      const {lng, lat, zoom, content, themeId } = this.props.attributes;
+      const {lng, lat, zoom, content, themeAttribution, themeUrl } = this.props.attributes;
       const position = [lat, lng];
-      const themeSelected = providers.find( provider => provider.id == themeId ) || 1;
 
         return (
           <Map center={position} zoom={Number(zoom)} onZoomend={ev => this.onZoom(ev)}  >
             <TileLayer
-              url={themeSelected.url}
-              attribution={themeSelected.attribution}
+              url={themeUrl}
+              attribution={themeAttribution}
             />
             <Marker position={position} draggable onMoveend={ev => this.onMarkerMove(ev)}>
               <Popup>{ content }</Popup>

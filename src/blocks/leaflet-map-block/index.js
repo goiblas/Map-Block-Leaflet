@@ -13,9 +13,12 @@ import attributes from './attributes';
 */
 import LeafletMap from '../../components/leaflet-map';
 import SearchPlace from '../../components/search-place';
+import ResizableBox from 're-resizable';
+
+
 
 export default registerBlockType(  'leaflet-map-block/leaflet-map-block', {
-    title:__('Leaflet map', ''),
+    title:__('Leaflet Map', ''),
     description: __('Easy way to inside maps in your contents', 'leaflet-map-block'),
     category: 'embed',
     keywords: [
@@ -27,21 +30,54 @@ export default registerBlockType(  'leaflet-map-block/leaflet-map-block', {
         src: icon
     }, 
     supports: {
-		align: [ 'left', 'right', 'wide', 'full' ],
+		align: [ 'wide', 'full' ],
 	},
     attributes,
     getEditWrapperProps({blockAlignment}){
-        if ( 'left' === blockAlignment || 'right' === blockAlignment || 'full' === blockAlignment ) {
+        if ( [  'wide', 'full' ].includes(blockAlignment) ) {
             return { 'data-align': blockAlignment };
         }
     },
     edit: props => {
-        const { attributes, isSelected } = props;
+        const { attributes, toggleSelection, setAttributes } = props;
+        const {height} = attributes;
+        
+        const resetMap = () =>  {
+            const { attributes,  setAttributes } = props;
+            let  {zoom } = attributes;
+            
+            setAttributes({ zoom: zoom + 1})
+            setTimeout( () => { 
+                setAttributes( { zoom: props.attributes.zoom - 1 })
+            },300)
+        }
         return (
             <Fragment> 
                 <Inspector {...props}/>
                 <SearchPlace {...props} />
+
+                <ResizableBox
+                    size={ {
+                        width: '100%',
+                        height: height,
+                    } }
+                    minWidth= { '100%' }
+                    maxWidth= { '100%' }
+                    minHeight= { '100%' }
+                    enable={ { top: false, right: false, bottom: true, left: false, topRight: false, bottomRight: false, bottomLeft: true, topLeft: false } }
+                    onResizeStart={ () => {
+                        toggleSelection( false );
+                    } }
+                    onResizeStop={ ( event, direction, elt, delta ) => {
+                        setAttributes( {
+                            height: parseInt( height + delta.height, 10 ),
+                        } );
+                        resetMap();
+                        toggleSelection( true );
+                    } }
+                >
                 <LeafletMap {...props}/> 
+			</ResizableBox>
             </Fragment>
         )
     },

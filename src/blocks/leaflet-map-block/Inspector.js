@@ -19,7 +19,18 @@ export default class Inspector extends Component {
         super(props);
         this.divider = 2000;
     }
+    setTheme(themeId) {
+        const { setAttributes } = this.props;
+        const themeSelected = providers.find( provider => provider == themeId);
 
+        if( themeSelected) {
+            setAttributes({
+                themeId: themeSelected.id,
+                themeUrl: themeSelected.url,
+                themeAttribution: themeSelected.attribution,
+            })
+        }
+    }
     render() {
         const { attributes, setAttributes } = this.props;
         const { lat, lng, content, zoom, themeId } = attributes;
