@@ -28,9 +28,6 @@ function lmb_block_load_textdomain() {
 add_action( 'init', 'lmb_block_load_textdomain' );
 
 
-/**
- * Enqueue block editor JavaScript and CSS.
- */
 function lmb_register_leaflet_map_block() {
 	if(!function_exists('register_block_type')) {
 		return;
@@ -58,7 +55,7 @@ function lmb_register_leaflet_map_block() {
 		filemtime( plugin_dir_path( __FILE__ ) . $block_path )
 	);
 
-	// Enqueue optional editor only styles
+	// Enqueue editor styles
 	wp_enqueue_style(
 		'lmb-block-editor-css',
 		plugins_url($style_path, __FILE__),
