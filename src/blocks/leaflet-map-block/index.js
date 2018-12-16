@@ -25,10 +25,7 @@ export default registerBlockType(  'leaflet-map-block/leaflet-map-block', {
         __( 'map', 'leaflet-map-block' ),
         __( 'leaflet', 'leaflet-map-block' ),
     ],
-    icon: {
-        background: '#eceff4',
-        src: icon
-    }, 
+    icon, 
     supports: {
 		align: [ 'wide', 'full' ],
 	},
