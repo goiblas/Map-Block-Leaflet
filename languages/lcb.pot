@@ -3,19 +3,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/leaflet-map-block/index.js:21
-msgid "Leaflet Map"
+#: src/blocks/leaflet-map-block/index.js:20
+msgid "Map Leaflet"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:22
+#: src/blocks/leaflet-map-block/index.js:21
 msgid "Easy way to inside maps in your contents"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:25
+#: src/blocks/leaflet-map-block/index.js:24
 msgid "map"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:26
+#: src/blocks/leaflet-map-block/index.js:25
 msgid "leaflet"
 msgstr ""
 

@@ -2,8 +2,7 @@ import providers from './../../shared/providers';
 
 const attributes = {
     align: {
-        type: 'string',
-        default: 'wide'
+        type: 'string'
     },
     lat: {
         type: 'number',

@@ -2,7 +2,7 @@
     height: 100%;
     position: relative;
 }
-.leaflet-map-block-header {
+.map-block-leaflet-header{
     position: absolute;
     z-index: 500;
     width: 100%;
@@ -13,15 +13,11 @@
     top: 0;
     left: 0;
 }
-.-is-leaflet-map-selected input {
+.is-map-block-leaflet-selected input {
     box-shadow: rgba(0,0,0,.2) 0 13px 25px
 }
-.-is-leaflet-map-selected {
+.is-map-block-leaflet-selected {
     pointer-events:all;
     transform: translateY(calc(-100% - 2px));
     opacity: 1;
 }
-
-
-
-// 

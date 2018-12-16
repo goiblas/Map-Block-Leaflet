@@ -16,7 +16,7 @@ export default class SearchPlace extends Component {
     render(){
         const {isSelected} = this.props;
         return (
-        <div className={classnames("leaflet-map-block-header", {'-is-leaflet-map-selected': isSelected})} >
+        <div className={classnames("map-block-leaflet-header", {'is-map-block-leaflet-selected': isSelected})} >
             <Place onChange={ ev => this.onChange(ev)}/>
         </div>
         )

@@ -10,7 +10,7 @@
  * Version:     1.1.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com
- * Text Domain: leaflet-map-block
+ * Text Domain: map-block-leaflet
  * Domain Path: /languages
  * License:     GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,13 +22,13 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-function lmb_block_load_textdomain() {
-	load_plugin_textdomain( 'leaflet-map-block', false, basename( __DIR__ ) . '/languages' );
+function map_block_leaflet_load_textdomain() {
+	load_plugin_textdomain( 'map-block-leaflet', false, basename( __DIR__ ) . '/languages' );
 }
-add_action( 'init', 'lmb_block_load_textdomain' );
+add_action( 'init', 'map_block_leaflet_load_textdomain' );
 
 
-function lmb_register_leaflet_map_block() {
+function map_block_leaflet_register() {
 	if(!function_exists('register_block_type')) {
 		return;
 	}
@@ -37,10 +37,10 @@ function lmb_register_leaflet_map_block() {
 	$style_path = 'https://unpkg.com/leaflet@1.0.2/dist/leaflet.css';
 	$script_path = 'https://unpkg.com/leaflet@1.0.2/dist/leaflet.js';
     
-    wp_register_style( 'css-gutenberg-leaflet-maps-block', $style_path);
-	wp_enqueue_style('css-gutenberg-leaflet-maps-block');
+    wp_register_style( 'css-map-block-leaflet', $style_path);
+	wp_enqueue_style('css-map-block-leaflet');
 
-	wp_enqueue_script(	'js-gutenberg-leaflet-maps-block', $script_path );
+	wp_enqueue_script(	'js-map-block-leaflet', $script_path );
 
 
 	// Enqueue assets blocks
@@ -49,7 +49,7 @@ function lmb_register_leaflet_map_block() {
 
 	// Enqueue the bundled block JS file
 	wp_enqueue_script(
-		'lmb-block-editor-js',
+		'js-editor-map-block-leaflet',
 		plugins_url($block_path, __FILE__),
 		[ 'wp-i18n', 'wp-element', 'wp-editor', 'wp-blocks', 'wp-components' ],
 		filemtime( plugin_dir_path( __FILE__ ) . $block_path )
@@ -57,29 +57,29 @@ function lmb_register_leaflet_map_block() {
 
 	// Enqueue editor styles
 	wp_enqueue_style(
-		'lmb-block-editor-css',
+		'css-editor-map-blcok-leaflet',
 		plugins_url($style_path, __FILE__),
 		[],
 		filemtime( plugin_dir_path( __FILE__ ) . $style_path )
 	);
 
-	// Register leaflet-map-block
-    register_block_type( 'leaflet-map-block/leaflet-map-block', array(
-		'editor_script' => 'js-gutenberg-leaflet-maps-block',
-		'editor_style' => 'lmb-block-editor-css',
-		'style' => 'css-gutenberg-leaflet-maps-block',
-		'render_callback' =>  'lmb_render_leaflet_map',
+	// Register map-block-leaflet
+    register_block_type( 'map-block-leaflet/map-block-leaflet', array(
+		'editor_script' => 'js-map-block-leaflet',
+		'editor_style' => 'css-editor-map-blcok-leaflet',
+		'style' => 'css-map-block-leaflet',
+		'render_callback' =>  'map_block_leaflet_reder',
 	 ) );
 }
 
-add_action('init', 'lmb_register_leaflet_map_block');
+add_action('init', 'map_block_leaflet_register');
 
 
 
 /**
  * Render in frontend leaflet map
  */
-function lmb_render_leaflet_map($settings) {
+function map_block_leaflet_reder($settings) {
 
 	// defualt value is not the settings :(
 	$latitude = $settings['lat'] ? $settings['lat'] : '40.416775';
@@ -92,7 +92,7 @@ function lmb_render_leaflet_map($settings) {
 	$height = $settings['height'] ? $settings['height'] : 220;
 	
 
-$classes = 'lmb-render-leaflet-map';
+$classes = 'map_block_leaflet';
 	switch ($settings['align']) {
 		case 'wide':
 			$classes .= ' alignwide';

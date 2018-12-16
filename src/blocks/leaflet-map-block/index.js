@@ -2,9 +2,9 @@ const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { Fragment } = wp.element;
 
-import icon from './icon';
 import './editor.scss';
-import './style.scss';
+
+import icon from './icon';
 import Inspector from './inspector';
 import attributes from './attributes';
 
@@ -16,14 +16,13 @@ import SearchPlace from '../../components/search-place';
 import ResizableBox from 're-resizable';
 
 
-
-export default registerBlockType(  'leaflet-map-block/leaflet-map-block', {
-    title:__('Leaflet Map', ''),
-    description: __('Easy way to inside maps in your contents', 'leaflet-map-block'),
+export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
+    title:__('Map Leaflet', ''),
+    description: __('Easy way to inside maps in your contents', 'map-block-leaflet'),
     category: 'embed',
     keywords: [
-        __( 'map', 'leaflet-map-block' ),
-        __( 'leaflet', 'leaflet-map-block' ),
+        __( 'map', 'map-block-leaflet' ),
+        __( 'leaflet', 'map-block-leaflet' ),
     ],
     icon, 
     supports: {

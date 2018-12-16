@@ -34,14 +34,14 @@ export default class Inspector extends Component {
             <InspectorControls>
                 <PanelBody>
                     <TextareaControl 
-                    label={__('Content of tooltip', 'leaflet-map-block')}
+                    label={__('Content of tooltip', 'map-block-leaflet')}
                         onChange={ content => setAttributes({content})}
                         value={content}
                     />
                 </PanelBody>
-                <PanelBody title={__('Theme', 'leaflet-map-block')} initialOpen={false}>
+                <PanelBody title={__('Theme', 'map-block-leaflet')} initialOpen={false}>
                 <SelectControl
-                    label={__('Select theme', 'leaflet-map-block')}
+                    label={__('Select theme', 'map-block-leaflet')}
                     value={ themeId }
                     options={ 
                         providers.map( provider => {
@@ -54,23 +54,23 @@ export default class Inspector extends Component {
                     onChange={  themeId  =>  this.setTheme(themeId) }
                 />
                 </PanelBody>
-                <PanelBody title={__('Position', 'leaflet-map-block')} initialOpen={false}>
-                    <label class="blocks-base-control__label" for="leaflet-map-block-text-control-lat">{__('latitude', 'leaflet-map-block')}</label>
+                <PanelBody title={__('Position', 'map-block-leaflet')} initialOpen={false}>
+                    <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lat">{__('latitude', 'map-block-leaflet')}</label>
                     <TextControl 
-                        id="leaflet-map-block-text-control-lat"
+                        id="map-block-leaflet-text-control-lat"
                         onChange={ lat => setAttributes({lat})}
                         type="number"
                         value={lat}
                     />
-                    <label class="blocks-base-control__label" for="leaflet-map-block-text-control-lon">{__('longitude', 'leaflet-map-block')}</label>
+                    <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lon">{__('longitude', 'map-block-leaflet')}</label>
                     <TextControl 
                         onChange={ lng => setAttributes(lng)}
-                        id="leaflet-map-block-text-control-lon"
+                        id="map-block-leaflet-text-control-lon"
                         type="number"
                         value={lng}
                     />
                     <RangeControl
-                        label={__("Zoom", "leaflet-map-block")}
+                        label={__("Zoom", "map-block-leaflet")}
                         value={zoom}
                         onChange={zoom => setAttributes({ zoom })}
                         min={1}
