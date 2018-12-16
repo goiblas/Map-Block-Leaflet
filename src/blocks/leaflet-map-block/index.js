@@ -33,9 +33,9 @@ export default registerBlockType(  'leaflet-map-block/leaflet-map-block', {
 		align: [ 'wide', 'full' ],
 	},
     attributes,
-    getEditWrapperProps({blockAlignment}){
-        if ( [  'wide', 'full' ].includes(blockAlignment) ) {
-            return { 'data-align': blockAlignment };
+    getEditWrapperProps({align}){
+        if ( [  'wide', 'full' ].includes(align) ) {
+            return { 'data-align': align };
         }
     },
     edit: props => {

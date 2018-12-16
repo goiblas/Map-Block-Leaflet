@@ -31,9 +31,10 @@ export default class LeafletMap extends Component {
       },10);
     }
     render(){
+
       const {lng, lat, zoom, content, themeAttribution, themeUrl } = this.props.attributes;
       const position = [lat, lng];
-
+  
         return (
           <Map center={position} zoom={Number(zoom)} onZoomend={ev => this.onZoom(ev)}  >
             <TileLayer

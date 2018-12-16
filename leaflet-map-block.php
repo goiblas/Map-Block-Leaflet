@@ -5,8 +5,8 @@
  * @license     GPL2+
  *
  * @wordpress-plugin
- * Plugin Name: Leaflet Map Block
- * Description: Leaflet Map Block -- Allows embed maps in your contents, good alternative to Google Maps without the need for api key
+ * Plugin Name: Map Block Leaflet
+ * Description: Map Block Leaflet -- Allows embed maps in your contents, good alternative to Google Maps without the need for api key
  * Version:     1.1.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com
@@ -117,8 +117,7 @@ $classes = 'lmb-render-leaflet-map';
 	if ( !empty( $content ) ){
 		$output .= '
 			L.marker([' . $latitude . ', '. $longitude .']).addTo(map)
-				.bindPopup(\''. $content .'\')
-				.openPopup();';
+				.bindPopup(\''. $content .'\')';
 	} else {
 		$output .= 'L.marker([' . $latitude . ', '. $longitude .']).addTo(map)';
 	}

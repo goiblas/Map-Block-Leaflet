@@ -3,3 +3,4 @@ composer.lock
 /vendor/
 /logs/
 .DS_Store
+*.zip

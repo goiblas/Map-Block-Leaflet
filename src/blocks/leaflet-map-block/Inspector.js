@@ -15,14 +15,9 @@ const {
 import providers from './../../shared/providers';
 
 export default class Inspector extends Component {
-    constructor(props){
-        super(props);
-        this.divider = 2000;
-    }
     setTheme(themeId) {
         const { setAttributes } = this.props;
-        const themeSelected = providers.find( provider => provider == themeId);
-
+        const themeSelected = providers.find( provider => provider.id == themeId);
         if( themeSelected) {
             setAttributes({
                 themeId: themeSelected.id,
@@ -56,7 +51,7 @@ export default class Inspector extends Component {
                             }
                         })
                     }
-                    onChange={  themeId  =>  setAttributes({themeId: Number(themeId)})  }
+                    onChange={  themeId  =>  this.setTheme(themeId) }
                 />
                 </PanelBody>
                 <PanelBody title={__('Position', 'leaflet-map-block')} initialOpen={false}>

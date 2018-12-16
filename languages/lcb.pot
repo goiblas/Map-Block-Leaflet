@@ -19,31 +19,31 @@ msgstr ""
 msgid "leaflet"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:42
+#: src/blocks/leaflet-map-block/inspector.js:37
 msgid "Content of tooltip"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:47
+#: src/blocks/leaflet-map-block/inspector.js:42
 msgid "Theme"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:49
+#: src/blocks/leaflet-map-block/inspector.js:44
 msgid "Select theme"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:62
+#: src/blocks/leaflet-map-block/inspector.js:57
 msgid "Position"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:63
+#: src/blocks/leaflet-map-block/inspector.js:58
 msgid "latitude"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:70
+#: src/blocks/leaflet-map-block/inspector.js:65
 msgid "longitude"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:78
+#: src/blocks/leaflet-map-block/inspector.js:73
 msgid "Zoom"
 msgstr ""
 

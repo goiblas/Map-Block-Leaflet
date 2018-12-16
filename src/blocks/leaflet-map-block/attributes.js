@@ -1,8 +1,9 @@
 import providers from './../../shared/providers';
 
 const attributes = {
-    blockAlignment: {
-        type: 'string'
+    align: {
+        type: 'string',
+        default: 'wide'
     },
     lat: {
         type: 'number',
