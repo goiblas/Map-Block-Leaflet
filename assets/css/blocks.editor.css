@@ -16,3 +16,6 @@
   pointer-events: all;
   position: relative;
   opacity: 1; }
+
+.map_block_leaflet a {
+  text-decoration: none; }

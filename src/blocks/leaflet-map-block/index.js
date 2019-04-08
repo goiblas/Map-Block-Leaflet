@@ -26,14 +26,9 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
     ],
     icon, 
     supports: {
-		align: [ 'wide', 'full' ],
+		align: true
 	},
     attributes,
-    getEditWrapperProps({align}){
-        if ( [  'wide', 'full' ].includes(align) ) {
-            return { 'data-align': align };
-        }
-    },
     edit: props => {
         const { attributes, toggleSelection, setAttributes } = props;
         const {height} = attributes;
