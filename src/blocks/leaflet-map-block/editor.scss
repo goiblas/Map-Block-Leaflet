@@ -3,21 +3,23 @@
     position: relative;
 }
 .map-block-leaflet-header{
-    position: absolute;
-    z-index: 500;
     width: 100%;
     max-width: 32rem;
-    margin: 0 auto;
-    opacity: 0;
+    margin: 0 0 .5rem;
+    position: absolute;
     pointer-events: none;
-    top: 0;
-    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity .25;
 }
-.is-map-block-leaflet-selected input {
-    box-shadow: rgba(0,0,0,.2) 0 13px 25px
-}
+
 .is-map-block-leaflet-selected {
     pointer-events:all;
-    transform: translateY(calc(-100% - 2px));
+    position: relative;
     opacity: 1;
+}
+
+// wordpress bugs
+.map_block_leaflet a {
+    text-decoration: none;
 }
