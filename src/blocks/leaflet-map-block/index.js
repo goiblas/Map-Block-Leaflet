@@ -26,7 +26,8 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
     ],
     icon, 
     supports: {
-		align: true
+        html: false,
+		align: ['wide', 'full']
 	},
     attributes,
     edit: props => {
