@@ -1,3 +1,9 @@
+$blue: #00a0d2;
+$dark-blue: #4f5969;
+$dark-gray: #191e23;
+$gray: #555d66;
+$light-gray: #f8f9f9;
+
 .leaflet-container {
     height: 100%;
     position: relative;
@@ -19,7 +25,21 @@
     opacity: 1;
 }
 
-// wordpress bugs
 .map_block_leaflet a {
     text-decoration: none;
+}
+
+.resizable-handle {
+    pointer-events: none;
+    position: absolute;
+    user-select: none;
+    bottom: -8px;
+    left: calc(50% - 8px);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: $blue;
+    box-sizing: border-box;
+    z-index: 999;
 }

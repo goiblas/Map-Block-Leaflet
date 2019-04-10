@@ -30,7 +30,7 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
 	},
     attributes,
     edit: props => {
-        const { attributes, toggleSelection, setAttributes } = props;
+        const { attributes, toggleSelection, setAttributes, isSelected } = props;
         const {height} = attributes;
         
         const resetMap = () =>  {
@@ -48,6 +48,7 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
                 <SearchPlace {...props} />
 
                 <ResizableBox
+                    className="is-selected"
                     size={ {
                         width: '100%',
                         height: height,
@@ -68,7 +69,8 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
                     } }
                 >
                 <LeafletMap {...props}/> 
-			</ResizableBox>
+                {isSelected && <div className="resizable-handle"></div> }
+			    </ResizableBox>
             </Fragment>
         )
     },
