@@ -33,6 +33,12 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.3.0 =
+* **Bug Fix.** No allow align left & right
+* **Improvement.** Resize behaviour
+* **Improvement.** Support themes with transtions pages
+* **Improvement.** Option disable scroll zoom
+
 = 1.2.0 =
 * **Bug Fix.** Grayscale theme does not work
 * **Bug Fix.** The search engine appears over the block´s toolbar
