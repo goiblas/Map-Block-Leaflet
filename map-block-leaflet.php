@@ -107,6 +107,8 @@ $classes = 'map_block_leaflet';
 	$output .= '<div id=\''. $id .'\' class="'.$classes .'" style="height: '. $height . 'px"></div>';
 	$output .= '
 		<script>
+		( function(){
+
 		var map = L.map(\''. $id .'\').setView([' . $latitude . ', '. $longitude .'], \''. $zoom .'\');
 
 			L.tileLayer(\''. $url . '\', {
@@ -122,7 +124,25 @@ $classes = 'map_block_leaflet';
 		$output .= 'L.marker([' . $latitude . ', '. $longitude .']).addTo(map)';
 	}
 
-	$output .= '</script>';
+	$output .= '
+		function is_loading() {
+			return document.body.classList.contains("loading");
+		}
+		var timer = 100;
+		function checkRender() {
+			if( is_loading()) {
+				setTimeout(function(){
+					checkRender();
+				} ,timer);
+			} else {
+				map.invalidateSize(true);
+			}
+		}
+		if( is_loading()) {
+			checkRender();
+		}
+	';
+	$output .= '})();</script>';
 	
 	return $output;
 }

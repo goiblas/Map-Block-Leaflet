@@ -43,3 +43,9 @@ $light-gray: #f8f9f9;
     box-sizing: border-box;
     z-index: 999;
 }
+
+// theme picker 
+.theme-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
