@@ -34,6 +34,10 @@ const attributes = {
     height: {
         type: 'number',
         default: 220
+    },
+    disableScrollZoom: {
+        type: 'boolean',
+        default: false
     }
 }
 

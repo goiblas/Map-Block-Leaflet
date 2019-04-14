@@ -9,9 +9,9 @@ const {
     TextareaControl,
     TextControl,
     RangeControl,
-    SelectControl
+    SelectControl,
+    ToggleControl
   } = wp.components;
-
 import providers from '../shared/providers';
 
 export default class Inspector extends Component {
@@ -28,7 +28,7 @@ export default class Inspector extends Component {
     }
     render() {
         const { attributes, setAttributes } = this.props;
-        const { lat, lng, height, content, zoom, themeId } = attributes;
+        const { lat, lng, height, content, zoom, themeId, disableScrollZoom } = attributes;
 
         return (
             <InspectorControls>
@@ -70,19 +70,29 @@ export default class Inspector extends Component {
                         type="number"
                         value={lng}
                     />
-                    <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lon">{__('Map height', 'map-block-leaflet')}</label>
-                    <TextControl 
-                        onChange={ height => setAttributes({height})}
-                        id="map-block-leaflet-text-control-lon"
-                        type="number"
-                        value={height}
-                    />
                     <RangeControl
                         label={__("Zoom", "map-block-leaflet")}
                         value={zoom}
                         onChange={zoom => setAttributes({ zoom })}
                         min={1}
                         max={17} />
+
+                </PanelBody>
+                <PanelBody title={__('Options', 'map-block-leaflet')} initialOpen={false}>
+
+                    <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lon">{__('Map height', 'map-block-leaflet')}</label>
+                    <TextControl 
+                        onChange={ height => setAttributes({height})}
+                        id="map-block-leaflet-text-control-lon"
+                        type="number"
+                        step="10"
+                        value={height}
+                    />
+                     <ToggleControl
+                        label={ __( 'Disable scroll zoom', 'map-block-leaflet' ) }
+                        checked={ disableScrollZoom }
+                        onChange={ value =>  setAttributes( { disableScrollZoom: value } ) }
+                    />
 
                 </PanelBody>
             </InspectorControls>

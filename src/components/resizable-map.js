@@ -14,6 +14,16 @@ export default class ResizableMap extends Component {
     invalidateMapSize() {
         this.mapRef.current.invalidateSize();
     }
+    componentDidUpdate(prevProps) {
+
+        const lastHeight = prevProps.attributes.height;
+        const currentHeight = this.props.attributes.height;
+    
+        if( lastHeight !== currentHeight) {
+            this.invalidateMapSize();
+        }
+       
+    }
     render(){
         const { attributes, toggleSelection, setAttributes, isSelected } = this.props;
         const { height } = attributes;
@@ -36,7 +46,6 @@ export default class ResizableMap extends Component {
                         setAttributes( {
                             height: parseInt( height + delta.height, 10 ),
                         } );
-                        this.invalidateMapSize();
                         toggleSelection( true );
                     } }
                 >

@@ -17,7 +17,13 @@ export default class LeafletMap extends Component {
        setAttributes({zoom: _zoom})
       }
     }
-    
+    componentDidUpdate() {
+      if(this.props.attributes.disabledScrollWheelZoom) {
+        this.mapRef.current.leafletElement.scrollWheelZoom.disable();
+      } else {
+        this.mapRef.current.leafletElement.scrollWheelZoom.enable();
+      }
+    }
     invalidateSize() {
       this.mapRef.current.leafletElement.invalidateSize();
     }
@@ -34,7 +40,6 @@ export default class LeafletMap extends Component {
 
       const {lng, lat, zoom, content, themeAttribution, themeUrl } = this.props.attributes;
       const position = [lat, lng];
-
         return (
             <Map 
               ref={this.mapRef}

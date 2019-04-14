@@ -43,12 +43,20 @@ msgstr ""
 msgid "Longitude"
 msgstr ""
 
-#: src/components/Inspector.js:73
-msgid "Map height"
+#: src/components/Inspector.js:74
+msgid "Zoom"
 msgstr ""
 
 #: src/components/Inspector.js:81
-msgid "Zoom"
+msgid "Options"
+msgstr ""
+
+#: src/components/Inspector.js:83
+msgid "Map height"
+msgstr ""
+
+#: src/components/Inspector.js:92
+msgid "Disable scroll zoom"
 msgstr ""
 
 #: src/shared/providers.js:13

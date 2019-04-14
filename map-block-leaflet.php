@@ -68,7 +68,7 @@ function map_block_leaflet_register() {
 		'editor_script' => 'js-map-block-leaflet',
 		'editor_style' => 'css-editor-map-blcok-leaflet',
 		'style' => 'css-map-block-leaflet',
-		'render_callback' =>  'map_block_leaflet_reder',
+		'render_callback' =>  'map_block_leaflet_reder'
 	 ) );
 }
 
@@ -114,8 +114,11 @@ $classes = 'map_block_leaflet';
 			L.tileLayer(\''. $url . '\', {
 				attribution: \''. $attribution .'\'
 			}).addTo(map);
+			
 	';
-
+	if($settings['disableScrollZoom']) {
+		$output .= 'map.scrollWheelZoom.disable();';
+	}
 	if ( !empty( $content ) ){
 		$output .= '
 			L.marker([' . $latitude . ', '. $longitude .']).addTo(map)
