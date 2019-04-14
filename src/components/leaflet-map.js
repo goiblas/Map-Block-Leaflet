@@ -18,7 +18,7 @@ export default class LeafletMap extends Component {
       }
     }
     componentDidUpdate() {
-      if(this.props.attributes.disabledScrollWheelZoom) {
+      if(this.props.attributes.disableScrollZoom) {
         this.mapRef.current.leafletElement.scrollWheelZoom.disable();
       } else {
         this.mapRef.current.leafletElement.scrollWheelZoom.enable();

@@ -22,7 +22,7 @@ export default class ResizableMap extends Component {
         if( lastHeight !== currentHeight) {
             this.invalidateMapSize();
         }
-       
+
     }
     render(){
         const { attributes, toggleSelection, setAttributes, isSelected } = this.props;
