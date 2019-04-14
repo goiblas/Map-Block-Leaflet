@@ -12,8 +12,7 @@ const {
     SelectControl
   } = wp.components;
 
-import providers from './../../shared/providers';
-import ThemePicker from './../../components/theme-picker';
+import providers from '../shared/providers';
 
 export default class Inspector extends Component {
     setTheme(themeId) {
@@ -41,14 +40,6 @@ export default class Inspector extends Component {
                     />
 
                 </PanelBody>
-                {/* <PanelBody title={__('Theme', 'map-block-leaflet')} initialOpen={true}>
-                    <ThemePicker 
-                        label={ __('Select theme', 'map-block-leaflet') }
-                        value= { themeId }
-                        options= { providers }
-                        onChange={  themeId  =>  this.setTheme(themeId) }
-                    />
-                </PanelBody> */}
                 <PanelBody title={__('Theme', 'map-block-leaflet')} initialOpen={false}>
                 <SelectControl
                     label={__('Select theme', 'map-block-leaflet')}

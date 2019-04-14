@@ -3,51 +3,51 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/leaflet-map-block/index.js:20
+#: src/blocks/leaflet-map-block/index.js:19
 msgid "Map Leaflet"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:21
+#: src/blocks/leaflet-map-block/index.js:20
 msgid "Easy way to inside maps in your contents"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:24
+#: src/blocks/leaflet-map-block/index.js:23
 msgid "map"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:25
+#: src/blocks/leaflet-map-block/index.js:24
 msgid "leaflet"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:38
+#: src/components/Inspector.js:37
 msgid "Content of tooltip"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:52
+#: src/components/Inspector.js:43
 msgid "Theme"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:54
+#: src/components/Inspector.js:45
 msgid "Select theme"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:67
+#: src/components/Inspector.js:58
 msgid "Position"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:68
+#: src/components/Inspector.js:59
 msgid "Latitude"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:75
+#: src/components/Inspector.js:66
 msgid "Longitude"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:82
+#: src/components/Inspector.js:73
 msgid "Map height"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/inspector.js:90
+#: src/components/Inspector.js:81
 msgid "Zoom"
 msgstr ""
 

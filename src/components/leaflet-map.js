@@ -1,10 +1,14 @@
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import  { createRef } from 'react';
 
 const { __ } = wp.i18n;
 const { Component } = wp.element;
 
 export default class LeafletMap extends Component {
-
+    constructor(props) {
+      super(props);
+      this.mapRef = createRef();
+    }
     onZoom({target} = {}) {
       if(target) {
        const {_zoom } = target;
@@ -12,6 +16,10 @@ export default class LeafletMap extends Component {
   
        setAttributes({zoom: _zoom})
       }
+    }
+    
+    invalidateSize() {
+      this.mapRef.current.leafletElement.invalidateSize();
     }
     onMarkerMove({target} =  {}) {
       if(target) {
@@ -21,31 +29,26 @@ export default class LeafletMap extends Component {
         setAttributes({..._latlng})
       }
     }
-    componentDidMount() {
-      const { attributes, setAttributes } = this.props;
-      const { zoom } = attributes;
-      
-      setAttributes({ zoom: zoom - 1})
-      setTimeout( () => { 
-          setAttributes( { zoom: zoom + 1})
-      },10);
-    }
+
     render(){
 
       const {lng, lat, zoom, content, themeAttribution, themeUrl } = this.props.attributes;
       const position = [lat, lng];
-  
+
         return (
-          <Map center={position} zoom={Number(zoom)} onZoomend={ev => this.onZoom(ev)}  >
-            <TileLayer
-              url={themeUrl}
-              attribution={themeAttribution}
-            />
-            <Marker position={position} draggable onMoveend={ev => this.onMarkerMove(ev)}>
-              <Popup>{ content }</Popup>
-            </Marker>
-  
-          </Map>
+            <Map 
+              ref={this.mapRef}
+              center={position} zoom={Number(zoom)} onZoomend={ev => this.onZoom(ev)}  >
+              <TileLayer
+                url={themeUrl}
+                attribution={themeAttribution}
+                invalidateSize={true}
+                />
+              <Marker position={position} draggable onMoveend={ev => this.onMarkerMove(ev)}>
+                <Popup>{ content }</Popup>
+              </Marker>
+    
+            </Map>
         )
     }
 }
