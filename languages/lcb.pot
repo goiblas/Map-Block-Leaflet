@@ -55,7 +55,7 @@ msgstr ""
 msgid "Map height"
 msgstr ""
 
-#: src/components/Inspector.js:92
+#: src/components/Inspector.js:93
 msgid "Disable scroll zoom"
 msgstr ""
 

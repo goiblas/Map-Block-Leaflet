@@ -90,7 +90,7 @@ function map_block_leaflet_reder($settings) {
 	$attribution = $settings['themeAttribution'] ?  $settings['themeAttribution'] : '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
 	$content = trim(preg_replace('/\s\s+/', ' ', $settings['content'])); ;
 	$height = $settings['height'] ? $settings['height'] : 220;
-	
+	$scrollWheelZoomDisabled = $settings['disableScrollZoom'] ? $settings['disableScrollZoom'] : true;
 
 $classes = 'map_block_leaflet';
 	switch ($settings['align']) {
@@ -116,7 +116,7 @@ $classes = 'map_block_leaflet';
 			}).addTo(map);
 			
 	';
-	if($settings['disableScrollZoom']) {
+	if($scrollWheelZoomDisabled) {
 		$output .= 'map.scrollWheelZoom.disable();';
 	}
 	if ( !empty( $content ) ){

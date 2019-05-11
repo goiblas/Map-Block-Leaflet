@@ -37,7 +37,7 @@ const attributes = {
     },
     disableScrollZoom: {
         type: 'boolean',
-        default: false
+        default: true
     }
 }
 

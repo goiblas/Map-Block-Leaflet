@@ -88,12 +88,12 @@ export default class Inspector extends Component {
                         step="10"
                         value={height}
                     />
-                     <ToggleControl
+                
+                    <ToggleControl
                         label={ __( 'Disable scroll zoom', 'map-block-leaflet' ) }
                         checked={ disableScrollZoom }
                         onChange={ value =>  setAttributes( { disableScrollZoom: value } ) }
                     />
-
                 </PanelBody>
             </InspectorControls>
         );
