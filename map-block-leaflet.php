@@ -34,8 +34,8 @@ function map_block_leaflet_register() {
 	}
 	
 	// external assets
-	$style_path = 'https://unpkg.com/leaflet@1.0.2/dist/leaflet.css';
-	$script_path = 'https://unpkg.com/leaflet@1.0.2/dist/leaflet.js';
+	$style_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css';
+	$script_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js';
     
     wp_register_style( 'css-map-block-leaflet', $style_path);
 	wp_enqueue_style('css-map-block-leaflet');
