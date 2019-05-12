@@ -19,43 +19,39 @@ msgstr ""
 msgid "leaflet"
 msgstr ""
 
-#: src/components/Inspector.js:37
+#: src/components/Inspector.js:40
 msgid "Content of tooltip"
 msgstr ""
 
-#: src/components/Inspector.js:43
+#: src/components/Inspector.js:46
 msgid "Theme"
 msgstr ""
 
-#: src/components/Inspector.js:45
-msgid "Select theme"
-msgstr ""
-
-#: src/components/Inspector.js:58
+#: src/components/Inspector.js:55
 msgid "Position"
 msgstr ""
 
-#: src/components/Inspector.js:59
+#: src/components/Inspector.js:56
 msgid "Latitude"
 msgstr ""
 
-#: src/components/Inspector.js:66
+#: src/components/Inspector.js:63
 msgid "Longitude"
 msgstr ""
 
-#: src/components/Inspector.js:74
+#: src/components/Inspector.js:71
 msgid "Zoom"
 msgstr ""
 
-#: src/components/Inspector.js:81
+#: src/components/Inspector.js:78
 msgid "Options"
 msgstr ""
 
-#: src/components/Inspector.js:83
+#: src/components/Inspector.js:80
 msgid "Map height"
 msgstr ""
 
-#: src/components/Inspector.js:93
+#: src/components/Inspector.js:90
 msgid "Disable scroll zoom"
 msgstr ""
 

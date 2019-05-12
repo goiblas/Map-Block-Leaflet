@@ -10,6 +10,7 @@ const editBlocksCSSPlugin = new ExtractTextPlugin( {
   filename: './assets/css/blocks.editor.css',
 } );
 
+
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
   use: [
@@ -57,6 +58,18 @@ module.exports = {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract( extractConfig ),
       },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+							name: 'assets/[name].[ext]',
+							publicPath: '../img',
+            }
+          }
+        ]
+      }
     ],
   },
   plugins: [
