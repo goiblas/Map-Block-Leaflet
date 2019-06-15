@@ -7,7 +7,7 @@
  * @wordpress-plugin
  * Plugin Name: Map Block Leaflet
  * Description: Map Block Leaflet -- Allows embed maps in your contents, good alternative to Google Maps without the need for api key
- * Version:     1.4.0
+ * Version:     1.5.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com
  * Text Domain: map-block-leaflet
@@ -28,35 +28,37 @@ function map_block_leaflet_load_textdomain() {
 add_action( 'init', 'map_block_leaflet_load_textdomain' );
 
 
+function map_block_leaflet_enqueue_external_assets() {
+	$script_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js';
+	$style_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css';
+
+	wp_enqueue_style( 'css-map-block-leaflet', $style_path, array(), '1.5.1' );
+	wp_enqueue_script( 'js-map-block-leaflet', $script_path, array(), '1.5.1', false );
+}
+
 function map_block_leaflet_register() {
 	if(!function_exists('register_block_type')) {
 		return;
 	}
-	
-	// external assets
-	$style_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css';
-	$script_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js';
-    
-    wp_register_style( 'css-map-block-leaflet', $style_path);
-	wp_enqueue_style('css-map-block-leaflet');
 
-	wp_enqueue_script(	'js-map-block-leaflet', $script_path );
-
+	if(is_admin()) {
+		map_block_leaflet_enqueue_external_assets();
+	}
 
 	// Enqueue assets blocks
 	$block_path = '/assets/js/editor.blocks.js';
 	$style_path = '/assets/css/blocks.editor.css';
 
 	// Enqueue the bundled block JS file
-	wp_enqueue_script(
+	wp_register_script(
 		'js-editor-map-block-leaflet',
 		plugins_url($block_path, __FILE__),
 		[ 'wp-i18n', 'wp-element', 'wp-editor', 'wp-blocks', 'wp-components' ],
 		filemtime( plugin_dir_path( __FILE__ ) . $block_path )
 	);
 
-	// Enqueue editor styles
-	wp_enqueue_style(
+	// register editor styles
+	wp_register_style(
 		'css-editor-map-blcok-leaflet',
 		plugins_url($style_path, __FILE__),
 		[],
@@ -65,15 +67,12 @@ function map_block_leaflet_register() {
 
 	// Register map-block-leaflet
     register_block_type( 'map-block-leaflet/map-block-leaflet', array(
-		'editor_script' => 'js-map-block-leaflet',
+		'editor_script' => 'js-editor-map-block-leaflet',
 		'editor_style' => 'css-editor-map-blcok-leaflet',
-		'style' => 'css-map-block-leaflet',
 		'render_callback' =>  'map_block_leaflet_reder'
 	 ) );
 }
-
 add_action('init', 'map_block_leaflet_register');
-
 
 
 /**
@@ -92,7 +91,7 @@ function map_block_leaflet_reder($settings) {
 	$height = $settings['height'] ? $settings['height'] : 220;
 	$scrollWheelZoomDisabled = $settings['disableScrollZoom'] ? $settings['disableScrollZoom'] : true;
 
-$classes = 'map_block_leaflet';
+	$classes = 'map_block_leaflet';
 	switch ($settings['align']) {
 		case 'wide':
 			$classes .= ' alignwide';
@@ -149,3 +148,14 @@ $classes = 'map_block_leaflet';
 	
 	return $output;
 }
+
+function leaflet_map_block_frontend_scripts() {
+	if( is_singular()) {
+		if( has_block( 'map-block-leaflet/map-block-leaflet' ) ) {
+			map_block_leaflet_enqueue_external_assets();
+		}
+	} else {
+		map_block_leaflet_enqueue_external_assets();
+	}
+}
+add_action( 'wp_enqueue_scripts', 'leaflet_map_block_frontend_scripts' );
