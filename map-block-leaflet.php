@@ -59,7 +59,7 @@ function map_block_leaflet_register() {
 
 	// register editor styles
 	wp_register_style(
-		'css-editor-map-blcok-leaflet',
+		'css-editor-map-block-leaflet',
 		plugins_url($style_path, __FILE__),
 		[],
 		filemtime( plugin_dir_path( __FILE__ ) . $style_path )
@@ -68,7 +68,7 @@ function map_block_leaflet_register() {
 	// Register map-block-leaflet
     register_block_type( 'map-block-leaflet/map-block-leaflet', array(
 		'editor_script' => 'js-editor-map-block-leaflet',
-		'editor_style' => 'css-editor-map-blcok-leaflet',
+		'editor_style' => 'css-editor-map-block-leaflet',
 		'render_callback' =>  'map_block_leaflet_reder'
 	 ) );
 }
