@@ -33,8 +33,10 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
-= 1.5.0 =
+= 1.6.0 =
 * **security.** Escape tooltip content
+* **Improvement.** Update version of library Leaflet map
+* **Improvement.** Add assets library Leaflet map
 
 = 1.5.0 =
 * **Improvement.** Conditionally Load frontend assets
