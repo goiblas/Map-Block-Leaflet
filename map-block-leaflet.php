@@ -29,11 +29,12 @@ add_action( 'init', 'map_block_leaflet_load_textdomain' );
 
 
 function map_block_leaflet_enqueue_external_assets() {
-	$script_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js';
-	$style_path = 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css';
+	$lib_script_path = '/lib/leaflet.js';
+	$lib_style_path = '/lib/leaflet.css';
+	$lib_version = '1.5.1';
 
-	wp_enqueue_style( 'css-map-block-leaflet', $style_path, array(), '1.5.1' );
-	wp_enqueue_script( 'js-map-block-leaflet', $script_path, array(), '1.5.1', false );
+	wp_enqueue_style( 'css-map-block-leaflet', plugins_url($lib_style_path, __FILE__), array(), $lib_version );
+	wp_enqueue_script( 'js-map-block-leaflet', plugins_url($lib_script_path, __FILE__), array(), $lib_version, false );
 }
 
 function map_block_leaflet_register() {

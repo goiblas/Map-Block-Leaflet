@@ -34,7 +34,7 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 == Changelog ==
 
 = 1.5.0 =
-* **Improvement.** Conditionally Load frontend assets
+* **security.** Escape tooltip content
 
 = 1.5.0 =
 * **Improvement.** Conditionally Load frontend assets
