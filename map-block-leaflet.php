@@ -121,7 +121,7 @@ function map_block_leaflet_reder($settings) {
 	if ( !empty( $content ) ){
 		$output .= '
 			L.marker([' . $latitude . ', '. $longitude .']).addTo(map)
-				.bindPopup(\''. $content .'\')';
+				.bindPopup(\''. esc_js($content) .'\')';
 	} else {
 		$output .= 'L.marker([' . $latitude . ', '. $longitude .']).addTo(map)';
 	}

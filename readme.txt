@@ -36,6 +36,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 = 1.5.0 =
 * **Improvement.** Conditionally Load frontend assets
 
+= 1.5.0 =
+* **Improvement.** Conditionally Load frontend assets
+
 = 1.4.0 =
 * **Improvement.** Improve the theme selector
 * **Improvement.** Update version of library Leaflet map
