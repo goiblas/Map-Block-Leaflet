@@ -33,8 +33,12 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.7.0 =
+* **Improvement.** Allow newlines in tooltip text, thanks to @daviewales
+* **Fix.** Define variables and prevent php notices, thanks to @davinian @bjoluc
+
 = 1.6.0 =
-* **security.** Escape tooltip content
+* **Security.** Escape tooltip content
 * **Improvement.** Update version of library Leaflet map
 * **Improvement.** Add assets library Leaflet map
 
