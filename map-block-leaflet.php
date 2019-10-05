@@ -70,62 +70,90 @@ function map_block_leaflet_register() {
     register_block_type( 'map-block-leaflet/map-block-leaflet', array(
 		'editor_script' => 'js-editor-map-block-leaflet',
 		'editor_style' => 'css-editor-map-block-leaflet',
-		'render_callback' =>  'map_block_leaflet_reder'
+		'render_callback' =>  'map_block_leaflet_reder',
+		'attributes' => [
+			'lat' => [
+				'type' => 'number',
+				'default' => 40.416775
+			],
+			'lng'  => [
+				'type'  => 'number',
+				'default' => -3.703790
+			],
+			'themeUrl' => [
+				'type' => 'string',
+				'default' =>  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+			],
+			'themeAttribution' => [
+				'type' => 'string',
+				'default' => '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+			],
+			'height' => [
+				'type' => 'number',
+				'default' => 220
+			],
+			'disableScrollZoom'=> [
+				'type' => 'boolean',
+				'default' => true
+			],
+			'zoom' => [
+				'type' => 'number',
+				'default' => 15
+			],
+			'themeId' => [
+				'type' => 'number',
+				'default' => 1
+			],
+			'content' => [
+				'type' => 'string',
+				'default' => ''
+			]
+		]
 	 ) );
 }
 add_action('init', 'map_block_leaflet_register');
-
 
 /**
  * Render in frontend leaflet map
  */
 function map_block_leaflet_reder($settings) {
-
-	// defualt value is not the settings :(
-	$latitude = $settings['lat'] ? $settings['lat'] : '40.416775';
-	$longitude = $settings['lng'] ? $settings['lng']:  '-3.703790';
-	$zoom = $settings['zoom'] ? $settings['zoom']: '15';
-
-	$url = $settings['themeUrl'] ?  $settings['themeUrl'] : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-	$attribution = $settings['themeAttribution'] ?  $settings['themeAttribution'] : '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
-	$content = trim(preg_replace('/\s\s+/', ' ', $settings['content'])); ;
-	$height = $settings['height'] ? $settings['height'] : 220;
-	$scrollWheelZoomDisabled = $settings['disableScrollZoom'] ? $settings['disableScrollZoom'] : true;
+	$content = trim(preg_replace('/\s\s+/', ' ', $settings['content']));
 
 	$classes = 'map_block_leaflet';
-	switch ($settings['align']) {
-		case 'wide':
+	if(array_key_exists('align', $settings)) {
+		switch ($settings['align']) {
+			case 'wide':
 			$classes .= ' alignwide';
 			break;
-		case 'full':
+			case 'full':
 			$classes .= ' alignfull';
 			break;
+		}
 	}
 
-
 	$id = uniqid('lmb_');
-	$output .= '<div id=\''. $id .'\' class="'.$classes .'" style="height: '. $height . 'px"></div>';
+	$output = '<div id=\''. $id .'\' class="'.$classes .'" style="height: '. $settings['height'] . 'px"></div>';
 	$output .= '
 		<script>
 		( function(){
 
-		var map = L.map(\''. $id .'\').setView([' . $latitude . ', '. $longitude .'], \''. $zoom .'\');
+		var map = L.map(\''. $id .'\').setView([' . $settings['lat'] . ', '. $settings['lng'] .'], \''. $settings['zoom'] .'\');
 
-			L.tileLayer(\''. $url . '\', {
-				attribution: \''. $attribution .'\'
+			L.tileLayer(\''. $settings['themeUrl'] . '\', {
+				attribution: \''. $settings['themeAttribution'] .'\'
 			}).addTo(map);
 			
 	';
-	if($scrollWheelZoomDisabled) {
+	if($settings['disableScrollZoom']) {
 		$output .= 'map.scrollWheelZoom.disable();';
 	}
 	if ( !empty( $content ) ){
 		$output .= '
 			var content = \''. esc_js($content) .'\';
-			L.marker([' . $latitude . ', '. $longitude .']).addTo(map)
+			L.marker([' . $settings['lat'] . ', '. $settings['lng'] .']).addTo(map)
 				.bindPopup( content.replace(/\r?\n/g, "<br />") )';
 	} else {
-		$output .= 'L.marker([' . $latitude . ', '. $longitude .']).addTo(map)';
+		$output .= 'L.marker([' . $settings['lat'] . ', '. $settings['lng'] .']).addTo(map)';
 	}
 
 	$output .= '
