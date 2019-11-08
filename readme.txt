@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.7.1 =
+* **Fix.** After update a post remove number attributes, thanks to @davinian @jeroensmeets
+
 = 1.7.0 =
 * **Improvement.** Allow newlines in tooltip text, thanks to @daviewales
 * **Fix.** Define variables and prevent php notices, thanks to @davinian @bjoluc
