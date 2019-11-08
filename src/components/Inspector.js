@@ -56,13 +56,13 @@ export default class Inspector extends Component {
                     <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lat">{__('Latitude', 'map-block-leaflet')}</label>
                     <TextControl 
                         id="map-block-leaflet-text-control-lat"
-                        onChange={ lat => setAttributes({lat})}
+                        onChange={ lat => setAttributes({lat: Number(lat)})}
                         type="number"
                         value={lat}
                     />
                     <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lon">{__('Longitude', 'map-block-leaflet')}</label>
                     <TextControl 
-                        onChange={ lng => setAttributes(lng)}
+                        onChange={ lng => setAttributes({lng: Number(lng)})}
                         id="map-block-leaflet-text-control-lon"
                         type="number"
                         value={lng}
@@ -70,7 +70,7 @@ export default class Inspector extends Component {
                     <RangeControl
                         label={__("Zoom", "map-block-leaflet")}
                         value={zoom}
-                        onChange={zoom => setAttributes({ zoom })}
+                        onChange={zoom => setAttributes({ zoom: Number(zoom) })}
                         min={1}
                         max={17} />
 
@@ -79,7 +79,7 @@ export default class Inspector extends Component {
 
                     <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lon">{__('Map height', 'map-block-leaflet')}</label>
                     <TextControl 
-                        onChange={ height => setAttributes({height})}
+                        onChange={ height => setAttributes({height: Number(height)})}
                         id="map-block-leaflet-text-control-lon"
                         type="number"
                         step="10"
