@@ -33,6 +33,10 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.8.0 =
+* **Improvement.** Support custom theme provider, thanks to @jeroensmeets
+* **Improvement.** Add new theme watercolor
+
 = 1.7.1 =
 * **Fix.** After update a post remove number attributes, thanks to @davinian @jeroensmeets
 
