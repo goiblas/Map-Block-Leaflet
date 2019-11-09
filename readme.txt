@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.8.1 =
+* **fix.** Update version files
+
 = 1.8.0 =
 * **Improvement.** Support custom theme provider, thanks to @jeroensmeets
 * **Improvement.** Add new theme watercolor
