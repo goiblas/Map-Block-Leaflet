@@ -49,6 +49,13 @@ const providers = [
         url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
         attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
         maxZoom: 19
+    },
+    {
+        id: 8,
+        name: __('Watercolor', 'map-block-leaflet'),
+        url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png',
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 16
     }
 ];
 

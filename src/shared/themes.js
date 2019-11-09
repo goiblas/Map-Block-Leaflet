@@ -5,6 +5,7 @@ import grayscale from '../shared/assets/grayscale.png';
 import drakMatter from '../shared/assets/dark-matter.png';
 import mapnik from '../shared/assets/mapnik.png';
 import wikimedia from '../shared/assets/wikimedia.png';
+import watercolor from '../shared/assets/watercolor.png';
 
 const themes = [
     {
@@ -41,6 +42,11 @@ const themes = [
         id: 7,
         name: 'Wikimedia',
 		image: wikimedia
+    },
+    {
+        id: 8,
+        name: 'Watercolor',
+		image: watercolor
     }
 ];
 

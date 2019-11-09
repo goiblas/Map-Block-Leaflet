@@ -9,7 +9,6 @@ const {
     TextareaControl,
     TextControl,
     RangeControl,
-    SelectControl,
     ToggleControl
   } = wp.components;
 
@@ -29,9 +28,14 @@ export default class Inspector extends Component {
             })
         }
     }
+
+    safeThemeUrl(url) {
+        const reqex = /{ext}|{ex}|{e}$/;
+        return url.replace(reqex, 'png');
+    }
     render() {
         const { attributes, setAttributes } = this.props;
-        const { lat, lng, height, content, zoom, themeId, disableScrollZoom } = attributes;
+        const { lat, lng, height, content, zoom, themeId, disableScrollZoom, themeUrl, themeAttribution } = attributes;
 
         return (
             <InspectorControls>
@@ -50,7 +54,20 @@ export default class Inspector extends Component {
                     themes={ themes }
                     onChange={ theme =>  this.setTheme(theme.id) }
                 />
-
+ 			  <label class="blocks-base-control__label" for="map-block-leaflet-text-control-xyz">{__('XYZ Tiles', 'map-block-leaflet')}</label>
+			  <TextControl 
+				  onChange={ themeUrl => setAttributes({ themeId: '', themeUrl: this.safeThemeUrl(themeUrl) })}
+				  id="map-block-leaflet-text-control-xyz"
+				  type="text"
+				  value={themeUrl}
+			  />
+ 			  <label class="blocks-base-control__label" for="map-block-leaflet-text-control-attribution">{__('Attribution', 'map-block-leaflet')}</label>
+			  <TextControl 
+				  onChange={ themeAttribution => setAttributes({  themeAttribution })}
+				  id="map-block-leaflet-text-control-attribution"
+				  type="text"
+				  value={themeAttribution}
+			  />
                 </PanelBody>
                 <PanelBody title={__('Position', 'map-block-leaflet')} initialOpen={false}>
                     <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lat">{__('Latitude', 'map-block-leaflet')}</label>

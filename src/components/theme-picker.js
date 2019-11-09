@@ -2,9 +2,7 @@ const { Component } = wp.element;
 const { BaseControl } = wp.components;
 
 export default class ThemePicker extends Component {
-
 	render() {
-
 		const {
 			label,
 			value,
