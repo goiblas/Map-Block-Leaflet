@@ -33,6 +33,10 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.8.2 =
+* **Improvement.** Update version of library Leaflet map
+* **Improvement.** Update block dependencies
+
 = 1.8.1 =
 * **fix.** Update version files
 
