@@ -30,7 +30,6 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
 	},
     attributes,
     edit: props => {
-        console.log(props.attributes)
         return (
             <Fragment> 
                 <Inspector {...props}/>
