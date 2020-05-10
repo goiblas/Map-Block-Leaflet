@@ -1,0 +1,12 @@
+/src
+/design
+/node_modules
+/.github
+/.git
+
+.babelrc
+.gitignore
+package-lock.json
+package.json
+README.md
+webpack.config.js
