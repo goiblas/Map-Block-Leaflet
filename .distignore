@@ -7,6 +7,7 @@
 
 .babelrc
 .gitignore
+.distignore
 package-lock.json
 package.json
 README.md
