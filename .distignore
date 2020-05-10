@@ -1,6 +1,7 @@
 /src
 /design
 /node_modules
+/.wordpress-org
 /.github
 /.git
 
