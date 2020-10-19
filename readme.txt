@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.8.5 =
+* **fix.** Enqueue lib assets from register_block_type fix use blocks outside the content, thanks to @youdaman
+
 = 1.8.4 =
 * **Improvement.** Update version of library Leaflet map
 
