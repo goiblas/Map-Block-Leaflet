@@ -1,6 +1,6 @@
 {
   "name": "leaft-map-block",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "private": true,
   "description": "Leaflet map block for WordPress",
   "main": "index.php",

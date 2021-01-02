@@ -4,7 +4,7 @@ Plugin URI: https://goiblas.com
 Contributors: goiblas
 Tags: blocks, gutenberg, editor, map, leaflet 
 Requires at least: 5.0
-Tested up to: 5.4.1
+Tested up to: 5.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 2. Realistic theme map
 
 == Changelog ==
+
+= 1.8.6 =
+* **fix.** Fix center when it is inside columns, thanks to @aribet
 
 = 1.8.5 =
 * **fix.** Enqueue lib assets from register_block_type fix use blocks outside the content, thanks to @youdaman
