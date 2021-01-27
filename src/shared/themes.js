@@ -4,7 +4,7 @@ import blackAndWhite from '../shared/assets/black-and-white.png';
 import grayscale from '../shared/assets/grayscale.png';
 import drakMatter from '../shared/assets/dark-matter.png';
 import mapnik from '../shared/assets/mapnik.png';
-import wikimedia from '../shared/assets/wikimedia.png';
+import stadia from '../shared/assets/stadia.png';
 import watercolor from '../shared/assets/watercolor.png';
 
 const themes = [
@@ -40,8 +40,8 @@ const themes = [
     },
     {
         id: 7,
-        name: 'Wikimedia',
-		image: wikimedia
+        name: 'Stadia OSMBright',
+		image: stadia
     },
     {
         id: 8,

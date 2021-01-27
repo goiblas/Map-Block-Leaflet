@@ -45,10 +45,10 @@ const providers = [
     },
     {
         id: 7,
-        name: __('Wikimedia', 'map-block-leaflet'),
-        url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
-        attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-        maxZoom: 19
+        name: __('Stadia OSMBright', 'map-block-leaflet'),
+        url: 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 20
     },
     {
         id: 8,

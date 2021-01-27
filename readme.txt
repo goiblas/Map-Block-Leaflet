@@ -33,6 +33,10 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 1.8.7 =
+* **fix.** Remove sourceMap warning, when used in Chrome Devtools, thanks to @thomasprice61
+* **fix.** Replace wikimedia tiles by Stadia OSMBright
+
 = 1.8.6 =
 * **fix.** Fix center when it is inside columns, thanks to @aribet
 

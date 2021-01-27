@@ -84,7 +84,7 @@ msgid "Mapnik"
 msgstr ""
 
 #: src/shared/providers.js:48
-msgid "Wikimedia"
+msgid "Stadia OSMBright"
 msgstr ""
 
 #: src/shared/providers.js:55
