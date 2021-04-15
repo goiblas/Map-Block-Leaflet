@@ -1,6 +1,5 @@
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
+import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
 
 import './editor.scss';
 
@@ -10,10 +9,10 @@ import attributes from './attributes';
 /*
 * Components
 */
-import Inspector from '../../components/Inspector';
-import ResizableMap from '../../components/resizable-map';
-import SearchPlace from '../../components/search-place';
-
+import Search from "./components/Search"
+import Inspector from "./components/Inspector"
+import Resizable from "../../components/Resizable"
+import { Map, Marker } from "../../components/Map"
 
 export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
     title:__('Map Leaflet', 'map-block-leaflet'),
@@ -30,15 +29,41 @@ export default registerBlockType(  'map-block-leaflet/map-block-leaflet', {
 	},
     attributes,
     edit: props => {
+        const {attributes, setAttributes, toggleSelection } = props;
+        const position = [attributes.lat, attributes.lng];
+
+        const handleMoveend = ({ lng, lat }) => setAttributes({lng, lat})
+        const handleZoom = ( zoom ) =>  setAttributes({ zoom })
+        const handleHeight = ( height ) =>  setAttributes({ height })
+      
         return (
-            <Fragment> 
+            <> 
                 <Inspector {...props}/>
-                <SearchPlace {...props} />
-                <ResizableMap {...props} />
-            </Fragment>
+                <Search setAttributes={props.setAttributes} isSelected={props.isSelected} />
+                <Resizable 
+                    height={ attributes.height}
+                    setHeight={ handleHeight }
+                    toggleSelection={toggleSelection}
+                    >
+                    <Map 
+                        disableScrollZoom={attributes.disableScrollZoom}
+                        position={position}
+                        zoom={attributes.zoom}
+                        themeUrl={attributes.themeUrl}
+                        height={attributes.height}
+                        setZoom={handleZoom}
+                        >
+                        <Marker 
+                            position={position}
+                            draggable
+                            onMoveend={handleMoveend}
+                            >
+                            {attributes.content}
+                        </Marker>
+                    </Map>        
+                </Resizable>
+            </>
         )
     },
-    save: () => {
-        return null;
-    }
+    save: () => null
 });

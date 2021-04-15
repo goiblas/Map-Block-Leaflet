@@ -7,7 +7,7 @@
  * @wordpress-plugin
  * Plugin Name: Map Block Leaflet
  * Description: Map Block Leaflet -- Allows embed maps in your contents, good alternative to Google Maps without the need for api key
- * Version:     1.8.7
+ * Version:     2.0.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com
  * Text Domain: map-block-leaflet
@@ -32,6 +32,8 @@ function map_block_leaflet_register() {
 		return;
 	}
 
+	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+
 	// Enqueue lib assets
 	$lib_script_path = '/lib/leaflet.js';
 	$lib_style_path = '/lib/leaflet.css';
@@ -39,32 +41,30 @@ function map_block_leaflet_register() {
 
 	wp_register_style( 'lib-css-map-block-leaflet', plugins_url($lib_style_path, __FILE__), array(), $lib_version );
 	wp_register_script( 'lib-js-map-block-leaflet', plugins_url($lib_script_path, __FILE__), array(), $lib_version, false );
-
-	// Enqueue assets blocks
-	$block_path = '/assets/js/editor.blocks.js';
-	$style_path = '/assets/css/blocks.editor.css';
+	wp_register_style( 'lib-css-map-block-leaflet-cluster', plugins_url("/lib/MarkerCluster.css", __FILE__), array("lib-css-map-block-leaflet"), $lib_version );
+	wp_register_script( 'lib-js-map-block-leaflet-cluster', plugins_url("/lib/leaflet.markercluster.js", __FILE__), array("lib-js-map-block-leaflet"), $lib_version, false );
 
 	// Enqueue the bundled block JS file
 	wp_register_script(
 		'js-editor-map-block-leaflet',
-		plugins_url($block_path, __FILE__),
-		[ 'wp-i18n', 'wp-element', 'wp-editor', 'wp-blocks', 'wp-components' ],
-		filemtime( plugin_dir_path( __FILE__ ) . $block_path )
+		plugins_url( 'build/index.js', __FILE__ ),
+		$asset_file['dependencies'],
+		$asset_file['version']
 	);
 
 	// register editor styles
 	wp_register_style(
 		'css-editor-map-block-leaflet',
-		plugins_url($style_path, __FILE__),
-		[],
-		filemtime( plugin_dir_path( __FILE__ ) . $style_path )
+		plugins_url( 'build/index.css', __FILE__ ),
+        [],
+		$asset_file['version']
 	);
 
 	// Register map-block-leaflet
     register_block_type( 'map-block-leaflet/map-block-leaflet', array(
 		'editor_script' => 'js-editor-map-block-leaflet',
 		'editor_style' => 'css-editor-map-block-leaflet',
-		'render_callback' =>  'map_block_leaflet_reder',
+		'render_callback' => 'map_block_leaflet_render',
 		'script' => 'lib-js-map-block-leaflet',
 		'style' => 'lib-css-map-block-leaflet',
 		'attributes' => [
@@ -106,13 +106,44 @@ function map_block_leaflet_register() {
 			]
 		]
 	 ) );
+
+	// Register map-block-leaflet-multimarker
+    register_block_type( 'map-block-leaflet/map-block-leaflet-multimarker', array(
+		'editor_script' => 'js-editor-map-block-leaflet',
+		'editor_style' => 'css-editor-map-block-leaflet',
+		'render_callback' => 'map_block_leaflet_multi_marker_render',
+		'script' => 'lib-js-map-block-leaflet-cluster',
+		'style' => 'lib-css-map-block-leaflet-cluster',
+		'attributes' => [
+			'markers' => [
+				'type' => 'array',
+				'default' => []
+			],
+			'themeUrl' => [
+				'type' => 'string',
+				'default' =>  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+			],
+			'themeAttribution' => [
+				'type' => 'string',
+				'default' => '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+			],
+			'height' => [
+				'type' => 'number',
+				'default' => 220
+			],
+			'themeId' => [
+				'type' => 'number',
+				'default' => 1
+			],
+		]
+	 ) );
 }
 add_action('init', 'map_block_leaflet_register');
 
 /**
  * Render in frontend leaflet map
  */
-function map_block_leaflet_reder($settings) {
+function map_block_leaflet_render($settings) {
 	$content = trim(preg_replace('/\s\s+/', ' ', $settings['content']));
 
 	$classes = 'map_block_leaflet';
@@ -177,4 +208,53 @@ function map_block_leaflet_reder($settings) {
 	$output .= '})();</script>';
 
 	return $output;
+}
+
+/**
+ * Render in frontend leaflet map multimarker
+ */
+function map_block_leaflet_multi_marker_render($settings) {
+
+	$classes = 'map_block_leaflet';
+	if(array_key_exists('align', $settings)) {
+		switch ($settings['align']) {
+			case 'wide':
+			$classes .= ' alignwide';
+			break;
+			case 'full':
+			$classes .= ' alignfull';
+			break;
+		}
+	}
+
+	$id = uniqid('lmb_');
+
+	return '
+	<div id=\''. $id .'\' class="'.$classes .'" style="height: '. $settings['height'] . 'px"></div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			var markets = '. json_encode($settings['markers']).';
+			var center = [51.505, -0.09];
+			
+			var layer = L.tileLayer(\''. $settings['themeUrl'] . '\', {
+				attribution: \''. $settings['themeAttribution'] .'\'
+			})
+			
+			var map = L.map('. $id .', { center: center, layers: [layer]});
+			map.scrollWheelZoom.disable();
+			
+			if(markets.length > 0) {
+				var markers = L.markerClusterGroup();
+				
+				markets.forEach( function(market) {
+					L.marker([market.latlng.lat, market.latlng.lng]).bindPopup(market.content).addTo(markers)
+				})
+				
+				map.addLayer(markers);
+				map.fitBounds(markers.getBounds(), {padding: [50, 50]})
+			}
+		});
+	</script>
+	';
+
 }

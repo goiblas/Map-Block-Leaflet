@@ -8,7 +8,7 @@ I use leaflet for maps and as a search engine to algolia
 
 - Easy way to add maps inside contents of WordPress
 - Is free and no need to use any api key
-- TODO: Provide of hooks for customizer
+- Multimarker
 
 # Setup
 

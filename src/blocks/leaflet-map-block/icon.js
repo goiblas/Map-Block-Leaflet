@@ -8,4 +8,3 @@ height='20'>
 </svg>;
 
 export default icon;
-

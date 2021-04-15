@@ -33,6 +33,11 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 2.0.0 =
+* **Feat.** Multimarker block
+* **Improvement.** Refactor to functional component 
+* **Improvement.** Use wp-scripts to compile code
+
 = 1.8.7 =
 * **fix.** Remove sourceMap warning, when used in Chrome Devtools, thanks to @thomasprice61
 * **fix.** Replace wikimedia tiles by Stadia OSMBright
