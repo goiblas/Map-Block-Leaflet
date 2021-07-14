@@ -3,18 +3,38 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/leaflet-map-block/index.js:19
+#: src/blocks/leaflet-map-block/index.js:18
 msgid "Map Leaflet"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:20
+#: src/blocks/leaflet-map-block/index.js:19
 msgid "Easy way to inside maps in your contents"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:23
+#: src/blocks/leaflet-map-block/index.js:22
 msgid "map"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:24
+#: src/blocks/leaflet-map-block/index.js:23
 msgid "leaflet"
+msgstr ""
+
+#: src/blocks/multi-marker/components/AddMarker.js:30
+msgid "Add marker"
+msgstr ""
+
+#: src/blocks/multi-marker/components/AddMarker.js:34
+msgid "Add new marker"
+msgstr ""
+
+#: src/blocks/multi-marker/components/EditorMarkers.js:14
+msgid "Content"
+msgstr ""
+
+#: src/blocks/multi-marker/components/EditorMarkers.js:18
+msgid "You can use html tags"
+msgstr ""
+
+#: src/blocks/multi-marker/components/EditorMarkers.js:63
+msgid "Accept"
 msgstr ""

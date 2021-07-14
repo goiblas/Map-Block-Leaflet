@@ -18,3 +18,9 @@
 .map-block-leaflet-list-item-action > *:not(:last-child) {
   margin-right: .5rem;
 }
+
+// Handle resize above the map
+.components-resizable-box__container.has-show-handle 
+.components-resizable-box__handle {
+  z-index: 600;
+}
