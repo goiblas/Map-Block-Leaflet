@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 2.0.3 =
+* **Fix.** Multimarker frontend, thanks to @baagi510
+
 = 2.0.2 =
 * **Improvement.** Resize user experience
 
