@@ -7,7 +7,7 @@
  * @wordpress-plugin
  * Plugin Name: Map Block Leaflet
  * Description: Map Block Leaflet -- Allows embed maps in your contents, good alternative to Google Maps without the need for api key
- * Version:     2.0.3
+ * Version:     2.1.0
  * Author:      Jesús Olazagoitia
  * Author URI:  https://goiblas.com
  * Text Domain: map-block-leaflet
@@ -256,5 +256,23 @@ function map_block_leaflet_multi_marker_render($settings) {
 		});
 	</script>
 	';
-
 }
+
+/**
+ * Dequeue assets from plugin block leaflet if isn't in page
+ */
+function map_block_leaflet_dequeue_lib_script()
+{
+  $id = get_the_ID();
+  if (!has_block('map-block-leaflet/map-block-leaflet', $id)) {
+    wp_dequeue_script('lib-js-map-block-leaflet');
+    wp_dequeue_script('lib-js-map-block-leaflet-cluster');
+    wp_dequeue_script('js-editor-map-block-leaflet');
+
+    wp_dequeue_style('css-editor-map-block-leaflet');
+    wp_dequeue_style('lib-css-map-block-leaflet');
+    wp_dequeue_style('lib-css-map-block-leaflet-cluster');
+  }
+}
+
+add_action('wp_enqueue_scripts', 'map_block_leaflet_dequeue_lib_script');

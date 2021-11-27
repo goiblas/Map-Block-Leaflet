@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 2.1.0 =
+* **Improvement.** Remove assets when it isn't in page, thanks to @PatrickFaramaz
+
 = 2.0.3 =
 * **Fix.** Multimarker frontend, thanks to @baagi510
 
