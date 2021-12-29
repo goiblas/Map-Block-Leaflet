@@ -169,7 +169,7 @@ function map_block_leaflet_render($settings) {
 			L.tileLayer(\''. $settings['themeUrl'] . '\', {
 				attribution: \''. $settings['themeAttribution'] .'\'
 			}).addTo(map);
-			
+
 	';
 	if($settings['disableScrollZoom']) {
 		$output .= 'map.scrollWheelZoom.disable();';
@@ -204,6 +204,13 @@ function map_block_leaflet_render($settings) {
 				map.invalidateSize(true);
 			});
 		}
+
+    var container = document.getElementById(\'' . $id . '\');
+    var observer = ResizeObserver && new ResizeObserver(function() {
+      map.invalidateSize(true);
+    });
+
+    observer && observer.observe(container);
 	';
 	$output .= '})();</script>';
 
@@ -235,24 +242,31 @@ function map_block_leaflet_multi_marker_render($settings) {
 		document.addEventListener("DOMContentLoaded", function() {
 			var markets = '. json_encode($settings['markers']).';
 			var center = [51.505, -0.09];
-			
+
 			var layer = L.tileLayer(\''. $settings['themeUrl'] . '\', {
 				attribution: \''. $settings['themeAttribution'] .'\'
 			})
-			
+
 			var map = L.map('. $id .', { center: center, layers: [layer]});
 			map.scrollWheelZoom.disable();
-			
+
 			if(markets.length > 0) {
 				var markers = L.markerClusterGroup();
-				
+
 				markets.forEach( function(market) {
 					L.marker([market.latlng.lat, market.latlng.lng]).bindPopup(market.content).addTo(markers)
 				})
-				
+
 				map.addLayer(markers);
 				map.fitBounds(markers.getBounds(), {padding: [50, 50]})
 			}
+
+      var container = document.getElementById(\'' . $id . '\');
+      var observer = ResizeObserver && new ResizeObserver(function() {
+        map.invalidateSize(true);
+      });
+
+      observer && observer.observe(container);
 		});
 	</script>
 	';
