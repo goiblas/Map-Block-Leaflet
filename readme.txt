@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 2.2.0 =
+* **Improvement.** Invalidate size on resize container, thanks to @liqueurdetoile
+
 = 2.1.0 =
 * **Improvement.** Remove assets when it isn't in page, thanks to @PatrickFaramaz
 
