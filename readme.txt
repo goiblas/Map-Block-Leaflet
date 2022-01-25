@@ -4,7 +4,7 @@ Plugin URI: https://goiblas.com
 Contributors: goiblas
 Tags: blocks, gutenberg, editor, map, leaflet 
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 2. Realistic theme map
 
 == Changelog ==
+
+= 2.2.1 =
+* **Improvement.** Add WordPress tested up version to 5.9
 
 = 2.2.0 =
 * **Improvement.** Invalidate size on resize container, thanks to @liqueurdetoile
