@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@wordpress/babel-plugin-makepot": "^4.1.1",
-    "@wordpress/scripts": "^14.1.0",
+    "@wordpress/scripts": "^25.0.0",
     "url-loader": "^4.1.1"
   },
   "dependencies": {
