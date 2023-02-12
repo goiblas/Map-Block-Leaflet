@@ -1,6 +1,6 @@
 {
   "name": "leaft-map-block",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "private": true,
   "description": "Leaflet map block for WordPress",
   "main": "index.php",
@@ -23,16 +23,13 @@
   },
   "devDependencies": {
     "@wordpress/babel-plugin-makepot": "^4.1.1",
-    "@wordpress/scripts": "^14.1.0",
+    "@wordpress/scripts": "^25.0.0",
     "url-loader": "^4.1.1"
   },
   "dependencies": {
-    "classnames": "^2.3.1",
-    "leaflet": "^1.7.1",
-    "leaflet-defaulticon-compatibility": "^0.1.1",
-    "leaflet.markercluster": "^1.5.0",
-    "react-algolia-places": "^0.1.2",
-    "react-leaflet": "^3.1.0",
-    "react-leaflet-markercluster": "^3.0.0-rc1"
+    "classnames": "^2.3.2",
+    "html-to-text": "^9.0.4",
+    "leaflet": "^1.9.0",
+    "react-leaflet": "^4.1.0"
   }
 }

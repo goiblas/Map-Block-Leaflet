@@ -1,11 +1,11 @@
-const voyager = "/wp-content/plugins/map-block-leaflet/assets/img/voyager.png";
-const worldimagery = "/wp-content/plugins/map-block-leaflet/assets/img/worldimagery.png";
-const blackAndWhite = "/wp-content/plugins/map-block-leaflet/assets/img/black-and-white.png";
-const grayscale = "/wp-content/plugins/map-block-leaflet/assets/img/grayscale.png";
-const drakMatter = "/wp-content/plugins/map-block-leaflet/assets/img/dark-matter.png";
-const mapnik = "/wp-content/plugins/map-block-leaflet/assets/img/mapnik.png";
-const stadia = "/wp-content/plugins/map-block-leaflet/assets/img/stadia.png";
-const watercolor = "/wp-content/plugins/map-block-leaflet/assets/img/watercolor.png";
+import voyager from "./images/voyager.png";
+import worldimagery from "./images/worldimagery.png";
+import blackAndWhite from "./images/black-and-white.png";
+import grayscale from "./images/grayscale.png";
+import drakMatter from "./images/dark-matter.png";
+import mapnik from "./images/mapnik.png";
+import watercolor from "./images/watercolor.png";
+import stadia from "./images/stadia.png";
 
 const themes = [
   {

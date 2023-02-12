@@ -1,0 +1,138 @@
+$blue: #00a0d2;
+$dark-blue: #4f5969;
+$dark-gray: #191e23;
+$gray: #555d66;
+$light-gray: #f8f9f9;
+$white: #fff;
+
+.leaflet-container {
+    height: 100%;
+    position: relative;
+}
+
+.map-block-leaflet-header {
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 0 .5rem;
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity .25;
+}
+
+.is-map-block-leaflet-selected {
+    pointer-events: all;
+    position: relative;
+    opacity: 1;
+}
+
+.map_block_leaflet a {
+    text-decoration: none;
+}
+
+// theme picker 
+.theme-picker-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+}
+
+
+.theme-picker-button {
+    padding: 4px;
+    overflow: hidden;
+    color: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: 4px;
+
+    &:hover {
+        color: $dark-gray;
+        background: $light-gray;
+    }
+
+    &[aria-pressed="true"] {
+        color: $dark-gray;
+        outline: 2px solid transparent;
+        outline-offset: -2px;
+        box-shadow: 0 0 0 2px $gray;
+    }
+
+    &:focus {
+        color: $dark-gray;
+        outline: 2px solid transparent;
+        outline-offset: -2px;
+        box-shadow: 0 0 0 2px $blue;
+    }
+
+    img {
+        display: block;
+        border: 1px solid rgba($dark-blue, .2);
+        border-radius: 4px;
+        outline: 1px solid transparent;
+    }
+}
+
+.theme-picker-name-button {
+    padding: 2px;
+    text-align: center;
+}
+
+// Handle resize above the map
+.components-resizable-box__container.has-show-handle .components-resizable-box__handle {
+    z-index: 600;
+}
+
+// Autocomplete 
+.mbl-listbox {
+    position: absolute;
+    top: calc(100% + 2px);
+    width: 100%;
+    left: 0;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    background-color: $white;
+    z-index: 9999;
+}
+
+.mbl-listbox-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    max-height: 300px;
+}
+
+.mbl-listbox-item {
+    display: block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: $dark-gray;
+    font-size: 14px;
+
+    &:hover {
+        background-color: $light-gray ;
+    }
+
+    &[aria-selected="true"] {
+        background-color: $blue;
+        color: $white;
+        outline: none;
+    }
+}
+
+.mbl-autocomplete {
+    position: relative;
+    padding: 0 2px;
+}
+
+.mbl-autocomplete-notmatch {
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 0;
+}

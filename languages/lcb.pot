@@ -3,38 +3,42 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/leaflet-map-block/index.js:18
-msgid "Map Leaflet"
+#: src/shared/components/Search/index.js:56
+msgid "Search for a location"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:19
-msgid "Easy way to inside maps in your contents"
+#: src/shared/components/Search/index.js:62
+msgid "No matches found"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:22
-msgid "map"
+#: src/shared/providers.js:13
+msgid "WorldImagery"
 msgstr ""
 
-#: src/blocks/leaflet-map-block/index.js:23
-msgid "leaflet"
+#: src/shared/providers.js:20
+msgid "Black And White"
 msgstr ""
 
-#: src/blocks/multi-marker/components/AddMarker.js:30
-msgid "Add marker"
+#: src/shared/providers.js:27
+msgid "Grayscale"
 msgstr ""
 
-#: src/blocks/multi-marker/components/AddMarker.js:34
-msgid "Add new marker"
+#: src/shared/providers.js:34
+msgid "Dark Matter"
 msgstr ""
 
-#: src/blocks/multi-marker/components/EditorMarkers.js:14
-msgid "Content"
+#: src/shared/providers.js:41
+msgid "Mapnik"
 msgstr ""
 
-#: src/blocks/multi-marker/components/EditorMarkers.js:18
-msgid "You can use html tags"
+#: src/shared/providers.js:48
+msgid "Stadia OSMBright"
 msgstr ""
 
-#: src/blocks/multi-marker/components/EditorMarkers.js:63
-msgid "Accept"
+#: src/shared/providers.js:55
+msgid "Watercolor"
+msgstr ""
+
+#: src/shared/providers.js:6
+msgid "Voyager"
 msgstr ""

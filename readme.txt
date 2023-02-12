@@ -4,7 +4,7 @@ Plugin URI: https://goiblas.com
 Contributors: goiblas
 Tags: blocks, gutenberg, editor, map, leaflet 
 Requires at least: 5.0
-Tested up to: 5.9
+Tested up to: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,15 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 2. Realistic theme map
 
 == Changelog ==
+
+= 3.0.0 =
+* **Improvement.** Rewrite using block.json
+* **Fix.** Address Search does not work, thanks to @davask42
+* **Fix.** Multimarker add new markers does not work, thanks to @josivela
+* **Fix.** Replace black and white theme
+* **Feat.** Multimarker allow modification latitude and longitude
+* **Improvement.** Update version of library Leaflet map
+* **Improvement.** Add WordPress tested up version to 6.1
 
 = 2.2.1 =
 * **Improvement.** Add WordPress tested up version to 5.9
