@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "map-block-leaflet/map-block-leaflet-multimarker",
+  "version": "2.2.1",
+  "title": "Map Leaflet multimarker",
+  "category": "embed",
+  "description": "Easy way to inside maps in your contents",
+  "keywords": [
+    "map",
+    "leaflet",
+    "multimarker"
+  ],
+  "attributes": {
+    "markers": {
+      "type": "array",
+      "default": []
+    },
+    "height": {
+      "type": "number",
+      "default": 220
+    },
+    "themeId": {
+      "type": "number",
+      "default": 1
+    },
+    "themeUrl": {
+      "type": "string",
+      "default": "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+    },
+    "themeAttribution": {
+      "type": "string",
+      "default": "&copy; <a href=\"http: //www.openstreetmap.org/copyright\">OpenStreetMap</a> &copy; <a href=\"https://carto.com/attribution\">CARTO</a>"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "alignWide": true
+  },
+  "textdomain": "map-block-leaflet",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php",
+  "style": "lib-css-map-block-leaflet",
+  "viewScript": "lib-js-map-block-leaflet"
+}
