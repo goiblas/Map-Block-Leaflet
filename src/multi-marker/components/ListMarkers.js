@@ -6,11 +6,23 @@ import { convert } from "html-to-text";
 import { SVG, Path } from '@wordpress/primitives'
 
 const initialMarkesToState = markers => {
-    return markers.reverse().map((props, id) => ({ id, ...props }))
+    return markers.sort((a, b) => {
+        const aContent = a.content.toLowerCase();
+        const bContent = b.content.toLowerCase();
+
+        if (aContent < bContent) {
+            return -1;
+        }
+        if (aContent > bContent) {
+            return 1;
+        }
+        return 0;
+    })
+        .map((props, id) => ({ id, ...props }))
 }
 
 const exportStateToMarkers = markers => {
-    return [...markers.reverse().map(({ id, ...props }) => props)]
+    return markers.map(({ id, ...props }) => props)
 }
 
 const htmlToString = (html) => convert(html, { wordwrap: 40 })

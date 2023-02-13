@@ -319,19 +319,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const initialMarkesToState = markers => {
-  return markers.reverse().map((props, id) => ({
+  return markers.sort((a, b) => {
+    const aContent = a.content.toLowerCase();
+    const bContent = b.content.toLowerCase();
+    if (aContent < bContent) {
+      return -1;
+    }
+    if (aContent > bContent) {
+      return 1;
+    }
+    return 0;
+  }).map((props, id) => ({
     id,
     ...props
   }));
 };
 const exportStateToMarkers = markers => {
-  return [...markers.reverse().map(_ref => {
+  return markers.map(_ref => {
     let {
       id,
       ...props
     } = _ref;
     return props;
-  })];
+  });
 };
 const htmlToString = html => (0,html_to_text__WEBPACK_IMPORTED_MODULE_5__.convert)(html, {
   wordwrap: 40

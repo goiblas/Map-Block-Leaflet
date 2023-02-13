@@ -23,14 +23,14 @@ msgstr ""
 msgid "Accept"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:53
+#: src/multi-marker/components/ListMarkers.js:65
 msgid "Edit marker"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:65
+#: src/multi-marker/components/ListMarkers.js:77
 msgid "Edit"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:66
+#: src/multi-marker/components/ListMarkers.js:78
 msgid "Delete"
 msgstr ""
