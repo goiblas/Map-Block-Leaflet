@@ -33,7 +33,7 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
-= 3.0.1 =
+= 3.1.0 =
 * **Fix.** Single marker wait for dom ready for initialize map
 * **Improvement.** Multimarker content marker is not required, thanks to @josivela
 

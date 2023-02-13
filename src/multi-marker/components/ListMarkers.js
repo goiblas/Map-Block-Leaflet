@@ -60,7 +60,7 @@ const ListMarkers = ({ markers: initialMarkes, onChange, themeUrl }) => {
                         </SVG>
                     </div>
                     <div>
-                        <div>{htmlToString(attrs.content)}</div>
+                        <div>{attrs.content ? htmlToString(attrs.content) : `(${attrs.latlng[0]}, ${attrs.latlng[1]})`}</div>
                         <div className="map-block-leaflet-list-item-action">
                             <Button isSmall variant="secondary" onClick={() => handleEdit(attrs.id)}>{__('Edit', 'map-block-leaflet')}</Button>
                             <Button isSmall isDestructive onClick={() => handleDelete(attrs.id)}>{__('Delete', 'map-block-leaflet')}</Button>
