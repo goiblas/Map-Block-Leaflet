@@ -33,6 +33,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 3.0.1 =
+* **Fix.** Single marker wait for dom ready for initialize map
+
 = 3.0.0 =
 * **Improvement.** Rewrite using block.json
 * **Fix.** Address Search does not work, thanks to @davask42
