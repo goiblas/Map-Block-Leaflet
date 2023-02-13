@@ -4,22 +4,6 @@ import { Button, Modal, TextareaControl, TextControl } from "@wordpress/componen
 import { Map, Marker } from "../../shared/components/Map"
 import Search from '../../shared/components/Search'
 
-const Content = ({ text: initialContent, onChange }) => {
-    const [content, setContent] = useState(initialContent);
-
-    const handleBlur = () => onChange(content)
-
-    return (
-        <TextareaControl
-            label={__('Content', 'map-block-leaflet')}
-            value={content}
-            onChange={setContent}
-            onBlur={handleBlur}
-            help={__('You can use html tags', 'map-block-leaflet')}
-        />
-    )
-}
-
 const EditorMarker = (props) => {
     const [content, setContent] = useState(props.content);
     const [latlng, setLatlng] = useState(props.latlng);
@@ -41,7 +25,7 @@ const EditorMarker = (props) => {
     const lat = latlng[0];
     const lng = latlng[1];
 
-    const hasValidMarker = [lat, lng].every(Number.isFinite) && content.length > 0;
+    const hasValidMarker = [lat, lng].every(Number.isFinite);
 
     return (
         <Modal

@@ -35,6 +35,8 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 = 3.0.1 =
 * **Fix.** Single marker wait for dom ready for initialize map
+* **Improvement.** Multimarker content marker is not required, thanks to @josivela
+
 
 = 3.0.0 =
 * **Improvement.** Rewrite using block.json

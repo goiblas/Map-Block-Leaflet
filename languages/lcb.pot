@@ -3,42 +3,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/shared/components/Search/index.js:56
-msgid "Search for a location"
+#: src/multi-marker/components/EditorMarkers.js:57
+msgid "Latitude"
 msgstr ""
 
-#: src/shared/components/Search/index.js:62
-msgid "No matches found"
+#: src/multi-marker/components/EditorMarkers.js:65
+msgid "Longitude"
 msgstr ""
 
-#: src/shared/providers.js:13
-msgid "WorldImagery"
+#: src/multi-marker/components/EditorMarkers.js:74
+msgid "Content"
 msgstr ""
 
-#: src/shared/providers.js:20
-msgid "Black And White"
+#: src/multi-marker/components/EditorMarkers.js:77
+msgid "You can use html tags"
 msgstr ""
 
-#: src/shared/providers.js:27
-msgid "Grayscale"
-msgstr ""
-
-#: src/shared/providers.js:34
-msgid "Dark Matter"
-msgstr ""
-
-#: src/shared/providers.js:41
-msgid "Mapnik"
-msgstr ""
-
-#: src/shared/providers.js:48
-msgid "Stadia OSMBright"
-msgstr ""
-
-#: src/shared/providers.js:55
-msgid "Watercolor"
-msgstr ""
-
-#: src/shared/providers.js:6
-msgid "Voyager"
+#: src/multi-marker/components/EditorMarkers.js:81
+msgid "Accept"
 msgstr ""

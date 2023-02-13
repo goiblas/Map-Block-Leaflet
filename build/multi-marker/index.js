@@ -84,21 +84,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const Content = _ref => {
-  let {
-    text: initialContent,
-    onChange
-  } = _ref;
-  const [content, setContent] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(initialContent);
-  const handleBlur = () => onChange(content);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content', 'map-block-leaflet'),
-    value: content,
-    onChange: setContent,
-    onBlur: handleBlur,
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('You can use html tags', 'map-block-leaflet')
-  });
-};
 const EditorMarker = props => {
   const [content, setContent] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(props.content);
   const [latlng, setLatlng] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(props.latlng);
@@ -113,23 +98,23 @@ const EditorMarker = props => {
     }
     props.onSave(response);
   };
-  const searchHandler = _ref2 => {
+  const searchHandler = _ref => {
     let {
       lat,
       lng
-    } = _ref2;
+    } = _ref;
     setLatlng([lat, lng]);
   };
-  const handleMoveend = _ref3 => {
+  const handleMoveend = _ref2 => {
     let {
       lng,
       lat
-    } = _ref3;
+    } = _ref2;
     return setLatlng([lat, lng]);
   };
   const lat = latlng[0];
   const lng = latlng[1];
-  const hasValidMarker = [lat, lng].every(Number.isFinite) && content.length > 0;
+  const hasValidMarker = [lat, lng].every(Number.isFinite);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Modal, {
     title: props.title,
     onRequestClose: props.onClose
