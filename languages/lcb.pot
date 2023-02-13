@@ -3,34 +3,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/multi-marker/components/EditorMarkers.js:57
-msgid "Latitude"
-msgstr ""
-
-#: src/multi-marker/components/EditorMarkers.js:65
-msgid "Longitude"
-msgstr ""
-
-#: src/multi-marker/components/EditorMarkers.js:74
-msgid "Content"
-msgstr ""
-
-#: src/multi-marker/components/EditorMarkers.js:77
-msgid "You can use html tags"
-msgstr ""
-
-#: src/multi-marker/components/EditorMarkers.js:81
-msgid "Accept"
-msgstr ""
-
-#: src/multi-marker/components/ListMarkers.js:65
+#: src/multi-marker/components/ListMarkers.js:62
 msgid "Edit marker"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:77
+#: src/multi-marker/components/ListMarkers.js:74
 msgid "Edit"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:78
+#: src/multi-marker/components/ListMarkers.js:75
 msgid "Delete"
 msgstr ""

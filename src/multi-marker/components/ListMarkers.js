@@ -2,7 +2,6 @@ import { __ } from "@wordpress/i18n";
 import { useState, useEffect } from "@wordpress/element";
 import { Button } from "@wordpress/components";
 import EditorMarker from "./EditorMarkers";
-import { convert } from "html-to-text";
 import { SVG, Path } from '@wordpress/primitives'
 
 const initialMarkesToState = markers => {
@@ -24,8 +23,6 @@ const initialMarkesToState = markers => {
 const exportStateToMarkers = markers => {
     return markers.map(({ id, ...props }) => props)
 }
-
-const htmlToString = (html) => convert(html, { wordwrap: 40 })
 
 const ListMarkers = ({ markers: initialMarkes, onChange, themeUrl }) => {
     const [markers, setMarkers] = useState([])
@@ -72,7 +69,7 @@ const ListMarkers = ({ markers: initialMarkes, onChange, themeUrl }) => {
                         </SVG>
                     </div>
                     <div>
-                        <div>{attrs.content ? htmlToString(attrs.content) : `(${attrs.latlng[0]}, ${attrs.latlng[1]})`}</div>
+                        <div>{attrs.label ? attrs.label : `(${attrs.latlng[0]}, ${attrs.latlng[1]})`}</div>
                         <div className="map-block-leaflet-list-item-action">
                             <Button isSmall variant="secondary" onClick={() => handleEdit(attrs.id)}>{__('Edit', 'map-block-leaflet')}</Button>
                             <Button isSmall isDestructive onClick={() => handleDelete(attrs.id)}>{__('Delete', 'map-block-leaflet')}</Button>

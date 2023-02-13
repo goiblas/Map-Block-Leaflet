@@ -7,16 +7,19 @@ import Search from '../../shared/components/Search'
 const EditorMarker = (props) => {
     const [content, setContent] = useState(props.content);
     const [latlng, setLatlng] = useState(props.latlng);
+    const [label, setLabel] = useState(props.label);
 
     const createMarker = () => {
-        const response = { latlng, label: "label ---", content }
+        const response = { latlng, label, content }
+
         if (props.id !== undefined) {
             response.id = props.id
         }
         props.onSave(response);
     }
 
-    const searchHandler = ({ lat, lng }) => {
+    const searchHandler = ({ lat, lng, label }) => {
+        setLabel(label);
         setLatlng([lat, lng]);
     }
 
@@ -52,10 +55,18 @@ const EditorMarker = (props) => {
                     </Map>
                 </div>
 
+                <div style={{ marginBottom: 20 }}>
+                    <TextControl
+                        label={__('Label', 'map-block-leaflet')}
+                        onChange={setLabel}
+                        value={label}
+                        help={__('This text will not be displayed on the web, it is to facilitate the identification of the marker.', 'map-block-leaflet')}
+                    />
+                </div>
+
                 <div className="map-block-leaflet-inputs-row">
                     <TextControl
                         label={__('Latitude', 'map-block-leaflet')}
-                        id="map-block-leaflet-text-control-lat"
                         onChange={newLat => setLatlng([Number(newLat), lng])}
                         type="number"
                         value={lat}
@@ -64,7 +75,6 @@ const EditorMarker = (props) => {
                     <TextControl
                         label={__('Longitude', 'map-block-leaflet')}
                         onChange={newLng => setLatlng([lat, Number(newLng)])}
-                        id="map-block-leaflet-text-control-lon"
                         type="number"
                         value={lng}
                     />

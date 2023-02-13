@@ -33,7 +33,7 @@ export default function Search({ onSearch }) {
     const handleSelect = newValue => {
         if (newValue) {
             const { lat, lng, name } = newValue;
-            onSearch({ lng: Number(lng), lat: Number(lat) });
+            onSearch({ lng: Number(lng), lat: Number(lat), label: name });
             setTerm(name);
         } else {
             setTerm("");

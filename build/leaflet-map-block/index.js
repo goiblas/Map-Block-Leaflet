@@ -835,7 +835,8 @@ function Search(_ref) {
       } = newValue;
       onSearch({
         lng: Number(lng),
-        lat: Number(lat)
+        lat: Number(lat),
+        label: name
       });
       setTerm(name);
     } else {
