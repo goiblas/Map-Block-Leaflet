@@ -30,7 +30,11 @@
  
         if(markers.length > 0) {
             markers.forEach( function(marker) {
-                L.marker(marker.latlng).bindPopup(marker.content).addTo(map)
+                if(marker.content) {
+                    L.marker(marker.latlng).bindPopup(marker.content).addTo(map)
+                } else {
+                    L.marker(marker.latlng).addTo(map)
+                }
             })
 
             const bounds = markers.map(function(marker) {
