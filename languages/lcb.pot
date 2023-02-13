@@ -3,6 +3,36 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: src/multi-marker/components/EditorMarkers.js:60
+msgid "Label"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:63
+msgid ""
+"This text will not be displayed on the web, it is to facilitate the "
+"identification of the marker."
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:69
+msgid "Latitude"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:76
+msgid "Longitude"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:84
+msgid "Content"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:87
+msgid "You can use html tags"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:91
+msgid "Accept"
+msgstr ""
+
 #: src/multi-marker/components/ListMarkers.js:62
 msgid "Edit marker"
 msgstr ""
@@ -13,4 +43,12 @@ msgstr ""
 
 #: src/multi-marker/components/ListMarkers.js:75
 msgid "Delete"
+msgstr ""
+
+#: src/shared/components/Search/index.js:56
+msgid "Search for a location"
+msgstr ""
+
+#: src/shared/components/Search/index.js:62
+msgid "No matches found"
 msgstr ""
