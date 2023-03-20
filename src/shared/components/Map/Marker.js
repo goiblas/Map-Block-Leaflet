@@ -1,5 +1,5 @@
 import { Marker as LeafletMarker, Popup, useMap } from 'react-leaflet';
-import { useEffect, useRef, useMemo, Children } from '@wordpress/element';
+import { useEffect, useRef, useMemo } from '@wordpress/element';
 import { __ } from "@wordpress/i18n";
 
 const noop = () => { }
@@ -31,7 +31,9 @@ export const Marker = ({ position, children, draggable = false, onMoveend = noop
       eventHandlers={eventHandlers}
       draggable={draggable}
     >
-      <Popup className="leaflet-popup">{children}</Popup>
+      <Popup className="leaflet-popup">
+        {children}
+      </Popup>
     </LeafletMarker>
   )
 }  
