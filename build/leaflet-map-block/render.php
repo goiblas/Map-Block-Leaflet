@@ -34,7 +34,7 @@
 		<?php } ?>
 	
 		<?php if ( !empty( $content ) ){ ?>
-			var content = "<?= $content ?>";
+			var content = "<?= esc_js( $content ) ?>";
 			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"]).addTo(map)
 				.bindPopup( content.replace(/\r?\n/g, "<br />") )
 		<?php } else { ?>

@@ -17,6 +17,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        function sanitize(str){
+            var text = document.createTextNode(str);
+            var p = document.createElement('p');
+            p.appendChild(text);
+            return p.innerHTML;
+        }
+        
         var markers = <?= json_encode($attributes['markers']) ?>;
         
         var center = [51.505, -0.09];
@@ -31,7 +38,8 @@
         if(markers.length > 0) {
             markers.forEach( function(marker) {
                 if(marker.content) {
-                    L.marker(marker.latlng).bindPopup(marker.content).addTo(map)
+                    const content = sanitize(marker.content)
+                    L.marker(marker.latlng).bindPopup(content).addTo(map)
                 } else {
                     L.marker(marker.latlng).addTo(map)
                 }
