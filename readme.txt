@@ -8,9 +8,11 @@ Tested up to: 6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Embed maps in content without needing to include an API key.
+
 == Description ==
 
-The  Map Block Leaflet is designed to work with the [Gutenberg editor](https://wordpress.org/plugins/gutenberg/ "Gutenberg Plugin"). It has been created to facilitate, as much as possible, embed maps in the content without the need to include an API key and be able to customize it visually.
+The Map Block Leaflet is designed to work with the [Gutenberg editor](https://wordpress.org/plugins/gutenberg/ "Gutenberg Plugin"). It has been created to facilitate, as much as possible, embed maps in the content without the need to include an API key and be able to customize it visually.
 
 **Contribute:**
 
