@@ -27,6 +27,7 @@
     "url-loader": "^4.1.1"
   },
   "dependencies": {
+    "@wordpress/icons": "^10.0.0",
     "classnames": "^2.3.2",
     "leaflet": "^1.9.0",
     "react-leaflet": "^4.1.0"

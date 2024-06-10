@@ -23,7 +23,7 @@
 		}
 		
 		function initilize() {
-			var map = L.map("<?= $id ?>").setView(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], "<?= $attributes['zoom'] ?>");
+			const map = L.map("<?= $id ?>").setView(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], "<?= $attributes['zoom'] ?>");
 	
 			L.tileLayer("<?=  $attributes['themeUrl'] ?>", {
 				attribution: '<?= $attributes['themeAttribution'] ?>'
@@ -32,16 +32,30 @@
 		<?php if($attributes['disableScrollZoom']) { ?>
 			map.scrollWheelZoom.disable();
 		<?php } ?>
-	
-		<?php if ( !empty( $content ) ){ ?>
-			var content = "<?= esc_js( $content ) ?>";
-			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"]).addTo(map)
-				.bindPopup( content.replace(/\r?\n/g, "<br />") )
+
+		<?php if(isset($attributes['markerImage'])) { ?>
+			const iconWidth = <?= $attributes['markerSize'] ?>;
+			const iconHeight = <?= $attributes['markerImage']['height'] / $attributes['markerImage']['width'] * $attributes['markerSize'] ?>;
+
+			const icon = L.icon({
+				iconUrl: "<?= $attributes['markerImage']['url'] ?>",
+				iconSize: [iconWidth, iconHeight],
+				iconAnchor: [iconWidth / 2, iconHeight],
+				popupAnchor: [0, -iconHeight / 1.25]
+			});
 		<?php } else { ?>
-			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"]).addTo(map);
+			const icon = new L.Icon.Default();
 		<?php } ?>
 
-			var timer = 100;
+		<?php if ( !empty( $content ) ){ ?>
+			const content = "<?= esc_js( $content ) ?>";
+			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], { icon: icon}).addTo(map)
+				.bindPopup( content.replace(/\r?\n/g, "<br />") )
+		<?php } else { ?>
+			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], { icon: icon}).addTo(map);
+		<?php } ?>
+
+			const timer = 100;
 			function checkRender() {
 				if( is_loading()) {
 					setTimeout(function(){
@@ -52,8 +66,8 @@
 				}
 			}
 
-			var container = document.getElementById("<?= $id ?>");
-			var observer = ResizeObserver && new ResizeObserver(function() {
+			const container = document.getElementById("<?= $id ?>");
+			const observer = ResizeObserver && new ResizeObserver(function() {
 				map.invalidateSize(true);
 			});
 

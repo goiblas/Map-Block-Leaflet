@@ -16,6 +16,14 @@ export default function Edit(props) {
     const handleHeight = (height) => setAttributes({ height })
     const handleSearch = ({ lat, lng }) => setAttributes({ lat, lng })
 
+    const { markerImage, markerSize } = attributes;
+
+    const customIcon = markerImage ? {
+        url: markerImage.url,
+        width: markerSize,
+        height: markerImage.height / markerImage.width * markerSize
+    } : null
+
     return (
         <div {...useBlockProps()}>
             <Inspector {...props} />
@@ -39,6 +47,7 @@ export default function Edit(props) {
                         position={position}
                         draggable
                         onMoveend={handleMoveend}
+                        customIcon={customIcon}
                     >
                         {attributes.content}
                     </Marker>
