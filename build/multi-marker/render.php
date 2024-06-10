@@ -18,21 +18,21 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         function sanitize(str){
-            var text = document.createTextNode(str);
-            var p = document.createElement('p');
+            const text = document.createTextNode(str);
+            const p = document.createElement('p');
             p.appendChild(text);
             return p.innerHTML;
         }
         
-        var markers = <?= json_encode($attributes['markers']) ?>;
+        const markers = <?= json_encode($attributes['markers']) ?>;
         
-        var center = [51.505, -0.09];
+        const center = [51.505, -0.09];
 
-        var layer = L.tileLayer("<?=  $attributes['themeUrl'] ?>", {
+        const layer = L.tileLayer("<?=  $attributes['themeUrl'] ?>", {
 			attribution: '<?= $attributes['themeAttribution'] ?>'
 		});
 
-        var map = L.map("<?= $id ?>", { center: center, layers: [layer]});
+        const map = L.map("<?= $id ?>", { center: center, layers: [layer]});
         map.scrollWheelZoom.disable();
  
         if(markers.length > 0) {
@@ -67,9 +67,9 @@
             map.fitBounds(bounds, {padding: [50, 50]})
         }
 
-        var container = document.getElementById("<?= $id ?>");
+        const container = document.getElementById("<?= $id ?>");
         
-        var observer = ResizeObserver && new ResizeObserver(function() {
+        const observer = ResizeObserver && new ResizeObserver(function() {
             map.invalidateSize(true);
         });
 

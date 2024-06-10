@@ -23,7 +23,7 @@
 		}
 		
 		function initilize() {
-			var map = L.map("<?= $id ?>").setView(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], "<?= $attributes['zoom'] ?>");
+			const map = L.map("<?= $id ?>").setView(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], "<?= $attributes['zoom'] ?>");
 	
 			L.tileLayer("<?=  $attributes['themeUrl'] ?>", {
 				attribution: '<?= $attributes['themeAttribution'] ?>'
@@ -48,14 +48,14 @@
 		<?php } ?>
 
 		<?php if ( !empty( $content ) ){ ?>
-			var content = "<?= esc_js( $content ) ?>";
+			const content = "<?= esc_js( $content ) ?>";
 			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], { icon: icon}).addTo(map)
 				.bindPopup( content.replace(/\r?\n/g, "<br />") )
 		<?php } else { ?>
 			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], { icon: icon}).addTo(map);
 		<?php } ?>
 
-			var timer = 100;
+			const timer = 100;
 			function checkRender() {
 				if( is_loading()) {
 					setTimeout(function(){
@@ -66,8 +66,8 @@
 				}
 			}
 
-			var container = document.getElementById("<?= $id ?>");
-			var observer = ResizeObserver && new ResizeObserver(function() {
+			const container = document.getElementById("<?= $id ?>");
+			const observer = ResizeObserver && new ResizeObserver(function() {
 				map.invalidateSize(true);
 			});
 
