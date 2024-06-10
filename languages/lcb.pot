@@ -3,11 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/leaflet-map-block/components/ImageUpload.js:16
-#: src/shared/components/ImageUpload/ImageUpload.js:16
-msgid "Upload Image"
-msgstr ""
-
 #: src/leaflet-map-block/components/Inspector.js:107
 msgid "Options"
 msgstr ""
@@ -96,4 +91,8 @@ msgstr ""
 
 #: src/multi-marker/components/ListMarkers.js:75
 msgid "Delete"
+msgstr ""
+
+#: src/shared/components/ImageUpload/ImageUpload.js:16
+msgid "Upload Image"
 msgstr ""
