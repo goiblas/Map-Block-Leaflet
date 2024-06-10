@@ -37,11 +37,26 @@
  
         if(markers.length > 0) {
             markers.forEach( function(marker) {
+                const customIcon = marker.markerImage ? {
+                    url: marker.markerImage.url,
+                    width: marker.markerSize,
+                    height: marker.markerImage.height / marker.markerImage.width * marker.markerSize
+                } : null
+
+                const icon = customIcon
+                    ? new L.Icon({
+                        iconUrl: customIcon.url,
+                        iconSize: [customIcon.width, customIcon.height],
+                        iconAnchor: [customIcon.width / 2, customIcon.height],
+                        popupAnchor: [0, -customIcon.height / 1.25]
+                        })
+                    : new L.Icon.Default()
+
                 if(marker.content) {
                     const content = sanitize(marker.content)
-                    L.marker(marker.latlng).bindPopup(content).addTo(map)
+                    L.marker(marker.latlng, { icon: icon }).bindPopup(content).addTo(map)
                 } else {
-                    L.marker(marker.latlng).addTo(map)
+                    L.marker(marker.latlng, { icon: icon }).addTo(map)
                 }
             })
 

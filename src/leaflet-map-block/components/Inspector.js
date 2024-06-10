@@ -10,7 +10,7 @@ import {
 import themes from '../../shared/themes';
 import providers from '../../shared/providers';
 import ThemePicker from '../../shared/components/ThemePicker';
-import ImageUpload from "./ImageUpload";
+import ImageUpload from '../../shared/components/ImageUpload';
 
 const Inspector = (props) => {
     const { attributes, setAttributes } = props;

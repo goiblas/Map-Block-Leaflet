@@ -4,6 +4,7 @@ msgstr ""
 "X-Generator: babel-plugin-makepot\n"
 
 #: src/leaflet-map-block/components/ImageUpload.js:16
+#: src/shared/components/ImageUpload/ImageUpload.js:16
 msgid "Upload Image"
 msgstr ""
 
@@ -20,10 +21,12 @@ msgid "Disable scroll zoom"
 msgstr ""
 
 #: src/leaflet-map-block/components/Inspector.js:41
+#: src/multi-marker/components/EditorMarkers.js:85
 msgid "Latitude"
 msgstr ""
 
 #: src/leaflet-map-block/components/Inspector.js:48
+#: src/multi-marker/components/EditorMarkers.js:92
 msgid "Longitude"
 msgstr ""
 
@@ -48,9 +51,49 @@ msgid "Attribution"
 msgstr ""
 
 #: src/leaflet-map-block/components/Inspector.js:91
+#: src/multi-marker/components/EditorMarkers.js:108
 msgid "Custom marker"
 msgstr ""
 
 #: src/leaflet-map-block/components/Inspector.js:98
+#: src/multi-marker/components/EditorMarkers.js:120
 msgid "Marker size"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:100
+msgid "Content"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:103
+msgid "You can use html tags"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:133
+msgid "Accept"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:71
+msgid "Details"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:76
+msgid "Label"
+msgstr ""
+
+#: src/multi-marker/components/EditorMarkers.js:79
+msgid ""
+"This text will not be displayed on the web, it is to facilitate the "
+"identification of the marker."
+msgstr ""
+
+#: src/multi-marker/components/ListMarkers.js:62
+msgid "Edit marker"
+msgstr ""
+
+#: src/multi-marker/components/ListMarkers.js:74
+msgid "Edit"
+msgstr ""
+
+#: src/multi-marker/components/ListMarkers.js:75
+msgid "Delete"
 msgstr ""

@@ -12,8 +12,6 @@ const KEY_CODE = {
   tab: 9,
 };
 
-const Loading = () => (<p>Cargando...</p>)
-
 const MIN_LETTERS = 2;
 
 const Autocomplete = props => {
