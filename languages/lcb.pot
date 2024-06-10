@@ -3,52 +3,54 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/multi-marker/components/EditorMarkers.js:60
-msgid "Label"
+#: src/leaflet-map-block/components/ImageUpload.js:16
+msgid "Upload Image"
 msgstr ""
 
-#: src/multi-marker/components/EditorMarkers.js:63
-msgid ""
-"This text will not be displayed on the web, it is to facilitate the "
-"identification of the marker."
+#: src/leaflet-map-block/components/Inspector.js:107
+msgid "Options"
 msgstr ""
 
-#: src/multi-marker/components/EditorMarkers.js:69
+#: src/leaflet-map-block/components/Inspector.js:109
+msgid "Map height"
+msgstr ""
+
+#: src/leaflet-map-block/components/Inspector.js:119
+msgid "Disable scroll zoom"
+msgstr ""
+
+#: src/leaflet-map-block/components/Inspector.js:41
 msgid "Latitude"
 msgstr ""
 
-#: src/multi-marker/components/EditorMarkers.js:76
+#: src/leaflet-map-block/components/Inspector.js:48
 msgid "Longitude"
 msgstr ""
 
-#: src/multi-marker/components/EditorMarkers.js:84
-msgid "Content"
+#: src/leaflet-map-block/components/Inspector.js:57
+msgid "Zoom"
 msgstr ""
 
-#: src/multi-marker/components/EditorMarkers.js:87
-msgid "You can use html tags"
+#: src/leaflet-map-block/components/Inspector.js:64
+msgid "Content of tooltip"
 msgstr ""
 
-#: src/multi-marker/components/EditorMarkers.js:91
-msgid "Accept"
+#: src/leaflet-map-block/components/Inspector.js:69
+msgid "Theme"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:62
-msgid "Edit marker"
+#: src/leaflet-map-block/components/Inspector.js:76
+msgid "XYZ Tiles"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:74
-msgid "Edit"
+#: src/leaflet-map-block/components/Inspector.js:83
+msgid "Attribution"
 msgstr ""
 
-#: src/multi-marker/components/ListMarkers.js:75
-msgid "Delete"
+#: src/leaflet-map-block/components/Inspector.js:91
+msgid "Custom marker"
 msgstr ""
 
-#: src/shared/components/Search/index.js:56
-msgid "Search for a location"
-msgstr ""
-
-#: src/shared/components/Search/index.js:62
-msgid "No matches found"
+#: src/leaflet-map-block/components/Inspector.js:98
+msgid "Marker size"
 msgstr ""

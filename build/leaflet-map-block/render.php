@@ -32,13 +32,27 @@
 		<?php if($attributes['disableScrollZoom']) { ?>
 			map.scrollWheelZoom.disable();
 		<?php } ?>
-	
+
+		<?php if(isset($attributes['markerImage'])) { ?>
+			const iconWidth = <?= $attributes['markerSize'] ?>;
+			const iconHeight = <?= $attributes['markerImage']['height'] / $attributes['markerImage']['width'] * $attributes['markerSize'] ?>;
+
+			const icon = L.icon({
+				iconUrl: "<?= $attributes['markerImage']['url'] ?>",
+				iconSize: [iconWidth, iconHeight],
+				iconAnchor: [iconWidth / 2, iconHeight],
+				popupAnchor: [0, -iconHeight / 1.25]
+			});
+		<?php } else { ?>
+			const icon = new L.Icon.Default();
+		<?php } ?>
+
 		<?php if ( !empty( $content ) ){ ?>
 			var content = "<?= esc_js( $content ) ?>";
-			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"]).addTo(map)
+			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], { icon: icon}).addTo(map)
 				.bindPopup( content.replace(/\r?\n/g, "<br />") )
 		<?php } else { ?>
-			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"]).addTo(map);
+			L.marker(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], { icon: icon}).addTo(map);
 		<?php } ?>
 
 			var timer = 100;

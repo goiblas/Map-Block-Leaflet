@@ -10,10 +10,14 @@ import {
 import themes from '../../shared/themes';
 import providers from '../../shared/providers';
 import ThemePicker from '../../shared/components/ThemePicker';
+import ImageUpload from "./ImageUpload";
 
 const Inspector = (props) => {
     const { attributes, setAttributes } = props;
-    const { lat, lng, height, content, zoom, themeId, disableScrollZoom, themeUrl, themeAttribution } = attributes;
+    const {
+        lat, lng, height, content, zoom, themeId, disableScrollZoom, themeUrl, themeAttribution,
+        markerImage, markerSize
+    } = attributes;
 
     const setTheme = ({ id }) => {
         const themeSelected = providers.find(provider => provider.id === id);
@@ -84,6 +88,22 @@ const Inspector = (props) => {
                     value={themeAttribution}
                 />
             </PanelBody>
+            <PanelBody title={__('Custom marker', 'map-block-leaflet')} initialOpen={false}>
+                <ImageUpload
+                    image={markerImage}
+                    onSelect={(image) => setAttributes({ markerImage: image })}
+                />
+
+                <RangeControl
+                    label={__('Marker size', 'map-block-leaflet')}
+                    value={markerSize}
+                    disabled={!markerImage}
+                    onChange={size => setAttributes({ markerSize: size })}
+                    min={10}
+                    max={200}
+                />
+            </PanelBody>
+
             <PanelBody title={__('Options', 'map-block-leaflet')} initialOpen={false}>
 
                 <label class="blocks-base-control__label" for="map-block-leaflet-text-control-lon">{__('Map height', 'map-block-leaflet')}</label>

@@ -46,6 +46,14 @@
     "content": {
       "type": "string",
       "default": ""
+    },
+    "markerImage": {
+      "type": "object",
+      "default": null
+    },
+    "markerSize": {
+      "type": "number",
+      "default": 36
     }
   },
   "supports": {
