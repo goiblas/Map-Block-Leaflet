@@ -17,13 +17,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        function sanitize(str){
-            const text = document.createTextNode(str);
-            const p = document.createElement('p');
-            p.appendChild(text);
-            return p.innerHTML;
-        }
-        
         const markers = <?= json_encode($attributes['markers']) ?>;
         
         const center = [51.505, -0.09];
@@ -53,8 +46,7 @@
                     : new L.Icon.Default()
 
                 if(marker.content) {
-                    const content = sanitize(marker.content)
-                    L.marker(marker.latlng, { icon: icon }).bindPopup(content).addTo(map)
+                    L.marker(marker.latlng, { icon: icon }).bindPopup(marker.content).addTo(map)
                 } else {
                     L.marker(marker.latlng, { icon: icon }).addTo(map)
                 }
