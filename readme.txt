@@ -35,6 +35,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 
 == Changelog ==
 
+= 3.2.1 =
+* **fix.** Multiple markers html escape
+
 = 3.2.0 =
 * **feat.** Enable custom marker icon, thanks to @danidub @glycymeris
 * **Improvement.** Update version of library Leaflet map
