@@ -21,7 +21,7 @@
         
         const center = [51.505, -0.09];
 
-        const layer = L.tileLayer("<?=  $attributes['themeUrl'] ?>", {
+        const layer = L.tileLayer("<?= esc_js($attributes['themeUrl']) ?>", {
 			attribution: '<?= $attributes['themeAttribution'] ?>'
 		});
 
