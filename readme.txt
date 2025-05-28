@@ -5,7 +5,7 @@ Contributors: goiblas
 Tags: blocks, gutenberg, editor, map, leaflet 
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ Note: This plugin requires WordPress 5 or the Gutenberg plugin active.
 2. Realistic theme map
 
 == Changelog ==
+
+= 3.2.2 =
+* **Security.** Escape URLs using esc_url for map and marker images, thanks to Peter Thaleikis.
 
 = 3.2.1 =
 * **fix.** Multiple markers html escape

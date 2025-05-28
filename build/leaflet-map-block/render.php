@@ -25,7 +25,7 @@
 		function initilize() {
 			const map = L.map("<?= $id ?>").setView(["<?= $attributes['lat'] ?>", "<?= $attributes['lng'] ?>"], "<?= $attributes['zoom'] ?>");
 	
-			L.tileLayer("<?=  $attributes['themeUrl'] ?>", {
+			L.tileLayer("<?= esc_js($attributes['themeUrl']) ?>", {
 				attribution: '<?= $attributes['themeAttribution'] ?>'
 			}).addTo(map);
 	
@@ -38,7 +38,7 @@
 			const iconHeight = <?= $attributes['markerImage']['height'] / $attributes['markerImage']['width'] * $attributes['markerSize'] ?>;
 
 			const icon = L.icon({
-				iconUrl: "<?= $attributes['markerImage']['url'] ?>",
+				iconUrl: "<?= esc_url( $attributes['markerImage']['url'] ) ?>",
 				iconSize: [iconWidth, iconHeight],
 				iconAnchor: [iconWidth / 2, iconHeight],
 				popupAnchor: [0, -iconHeight / 1.25]
